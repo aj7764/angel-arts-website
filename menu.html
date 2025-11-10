@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order delicious cookies, cupcakes, cakes, and brownies from Angel Arts & Culinary Academy. Fresh baked goods with premium ingredients.">
+    <meta name="keywords" content="cookies order Trichy, cupcakes delivery, cakes, brownies, healthy cookies, baked goods">
+    <title>Order Menu — Angel Arts & Culinary Academy</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .menu-hero {
+            background: linear-gradient(135deg, var(--bakers-rose), var(--deep-cocoa));
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .menu-hero h1 {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+
+        .menu-hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .menu-filter {
+            display: flex;
+            gap: 10px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--bakers-rose);
+            background: white;
+            color: var(--bakers-rose);
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active {
+            background: var(--bakers-rose);
+            color: white;
+        }
+
+        .filter-btn:hover {
+            background: var(--bakers-rose);
+            color: white;
+        }
+
+        .menu-section {
+            margin-bottom: 60px;
+        }
+
+        .menu-section h2 {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--deep-cocoa);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .menu-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--bakers-rose);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--deep-cocoa);
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .menu-item {
+            background: white;
+            border: 2px solid #f0f0f0;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            border-color: var(--bakers-rose);
+            box-shadow: 0 8px 20px rgba(217, 106, 106, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .menu-item-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--deep-cocoa);
+            margin-bottom: 8px;
+        }
+
+        .menu-item-price {
+            font-size: 1.3rem;
+            color: var(--bakers-rose);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .menu-item-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .minimum-order {
+            background: var(--cream);
+            border-left: 4px solid var(--butter-yellow);
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--deep-cocoa);
+            margin-bottom: 12px;
+        }
+
+        .order-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--bakers-rose);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            background: var(--deep-cocoa);
+            transform: scale(1.02);
+        }
+
+        .category-label {
+            display: inline-block;
+            background: var(--butter-yellow);
+            color: var(--deep-cocoa);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-hero h1 {
+                font-size: 2rem;
+            }
+
+            .menu-filter {
+                gap: 8px;
+            }
+
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .order-cta-section {
+            background: linear-gradient(135deg, var(--butter-yellow), var(--bakers-rose));
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .order-cta-section h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .order-cta-section p {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .contact-info a {
+            color: var(--bakers-rose);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Angel Arts</span>
+                    <span class="logo-subtitle">Culinary Academy</span>
+                </a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="menu.html" class="active">Order Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="btn-nav-cta">Order Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>🍰 Order Our Delicious Creations</h1>
+            <p>Fresh baked goods made with premium ingredients • Order with minimum quantities • Customizations available</p>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <main class="container" style="padding: 40px 20px;">
+        
+        <!-- Filter Buttons -->
+        <div class="menu-filter">
+            <button class="filter-btn active" onclick="filterMenu('all')">All Items</button>
+            <button class="filter-btn" onclick="filterMenu('cookies')">Cookies</button>
+            <button class="filter-btn" onclick="filterMenu('cupcakes')">Cupcakes</button>
+            <button class="filter-btn" onclick="filterMenu('cakes')">Tier Cakes</button>
+            <button class="filter-btn" onclick="filterMenu('brownies')">Brownies</button>
+        </div>
+
+        <!-- HEALTHY COOKIES SECTION -->
+        <section class="menu-section tab-content active" id="all">
+            <section class="menu-section" data-category="cookies">
+                <h2>🌾 Healthy Cookies (No Maida, No White Sugar)</h2>
+                <p class="section-subtitle">Nutritious & Delicious • Available in 1/2 kg & 1 kg orders</p>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="category-label">Healthy</span>
+                        <div class="menu-item-name">Wheat Butter Cookies</div>
+                        <div class="menu-item-price">₹900/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat Butter Cookies (Healthy)', 900)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Healthy</span>
+                        <div class="menu-item-name">Wheat Coconut Cookies</div>
+                        <div class="menu-item-price">₹900/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat Coconut Cookies', 900)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Healthy</span>
+                        <div class="menu-item-name">Wheat Short Bread Cookies</div>
+                        <div class="menu-item-price">₹900/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat Short Bread Cookies', 900)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Healthy</span>
+                        <div class="menu-item-name">Wheat & Ragi Ghee Rose Cookies</div>
+                        <div class="menu-item-price">₹1000/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat & Ragi Ghee Rose Cookies', 1000)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Healthy</span>
+                        <div class="menu-item-name">Wheat Almond Cookies</div>
+                        <div class="menu-item-price">₹1200/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat Almond Cookies (Healthy)', 1200)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Healthy</span>
+                        <div class="menu-item-name">Multi Grain Curry Leaf Cookies</div>
+                        <div class="menu-item-price">₹1000/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Multi Grain Curry Leaf Cookies', 1000)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Healthy</span>
+                        <div class="menu-item-name">Multi Grain Masala Cookies</div>
+                        <div class="menu-item-price">₹1000/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Multi Grain Masala Cookies', 1000)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Healthy</span>
+                        <div class="menu-item-name">Wheat Florentine Cookies</div>
+                        <div class="menu-item-price">₹2500/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat Florentine Cookies', 2500)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Healthy</span>
+                        <div class="menu-item-name">Wheat Ragi Cookies</div>
+                        <div class="menu-item-price">₹1100/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat Ragi Cookies', 1100)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Healthy</span>
+                        <div class="menu-item-name">Wheat Choco Chip Cookies</div>
+                        <div class="menu-item-price">₹1600/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat Choco Chip Cookies', 1600)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Healthy</span>
+                        <div class="menu-item-name">Wheat Orange Chocolate Cookies</div>
+                        <div class="menu-item-price">₹1500/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat Orange Chocolate Cookies', 1500)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Healthy</span>
+                        <div class="menu-item-name">Wheat Almond Oats Cookies</div>
+                        <div class="menu-item-price">₹1300/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat Almond Oats Cookies', 1300)">Order Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REGULAR COOKIES SECTION -->
+            <section class="menu-section" data-category="cookies">
+                <h2>🍪 Regular Cookies</h2>
+                <p class="section-subtitle">Available in 1 kg orders • Multiple flavors to choose from</p>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Wheat Butter Cookies</div>
+                        <div class="menu-item-price">₹900/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat Butter Cookies', 900)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Maida Butter Cookies</div>
+                        <div class="menu-item-price">₹900/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Maida Butter Cookies', 900)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Coconut Cookies</div>
+                        <div class="menu-item-price">₹900/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Coconut Cookies', 900)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Pista Cookies</div>
+                        <div class="menu-item-price">₹1000/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Pista Cookies', 1000)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Wheat Short Bread</div>
+                        <div class="menu-item-price">₹900/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat Short Bread', 900)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Maida Short Bread</div>
+                        <div class="menu-item-price">₹900/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Maida Short Bread', 900)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Ghee Rose Cookies</div>
+                        <div class="menu-item-price">₹1000/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Ghee Rose Cookies', 1000)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Nan-Khatai Cookies</div>
+                        <div class="menu-item-price">₹1200/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Nan-Khatai Cookies', 1200)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Ghee Cookies</div>
+                        <div class="menu-item-price">₹1000/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Ghee Cookies', 1000)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Wheat Almond Cookies</div>
+                        <div class="menu-item-price">₹1200/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Wheat Almond Cookies', 1200)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Maida Almond Cookies</div>
+                        <div class="menu-item-price">₹1200/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Maida Almond Cookies', 1200)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Curry Leaf Cookies</div>
+                        <div class="menu-item-price">₹1000/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Curry Leaf Cookies', 1000)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cookies</span>
+                        <div class="menu-item-name">Masala Cookies</div>
+                        <div class="menu-item-price">₹1000/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Masala Cookies', 1000)">Order Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CUPCAKES SECTION -->
+            <section class="menu-section" data-category="cupcakes">
+                <h2>🧁 Cup Cakes</h2>
+                <p class="section-subtitle">Egg or Eggless • Minimum Order: 1 piece • Customizations available</p>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="category-label">Cupcake</span>
+                        <div class="menu-item-name">Vanilla with Butter Icing</div>
+                        <div class="menu-item-price">₹65/piece</div>
+                        <div class="menu-item-description">Classic vanilla cupcake with smooth butter icing</div>
+                        <button class="order-btn" onclick="openOrderForm('Vanilla Cup Cake with Butter Icing', 65)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cupcake</span>
+                        <div class="menu-item-name">Chocolate with Ganache Icing</div>
+                        <div class="menu-item-price">₹90/piece</div>
+                        <div class="menu-item-description">Rich chocolate cupcake with ganache icing</div>
+                        <button class="order-btn" onclick="openOrderForm('Chocolate Cup Cake with Ganache Icing', 90)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cupcake</span>
+                        <div class="menu-item-name">Chocolate with Caramel & Belgium Ganache</div>
+                        <div class="menu-item-price">₹120/piece</div>
+                        <div class="menu-item-description">Chocolate with premium caramel & Belgium chocolate ganache</div>
+                        <button class="order-btn" onclick="openOrderForm('Chocolate Cup Cake with Caramel & Belgium Ganache', 120)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cupcake</span>
+                        <div class="menu-item-name">Vanilla with Caramel & Italian Meringue</div>
+                        <div class="menu-item-price">₹100/piece</div>
+                        <div class="menu-item-description">Vanilla cupcake with caramel & Italian meringue buttercream</div>
+                        <button class="order-btn" onclick="openOrderForm('Vanilla Cup Cake with Caramel & Italian Meringue', 100)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cupcake</span>
+                        <div class="menu-item-name">Red Velvet with Cream Cheese Butter Icing</div>
+                        <div class="menu-item-price">₹90/piece</div>
+                        <div class="menu-item-description">Elegant red velvet with cream cheese butter icing</div>
+                        <button class="order-btn" onclick="openOrderForm('Red Velvet Cup Cake with Cream Cheese Butter Icing', 90)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cupcake</span>
+                        <div class="menu-item-name">Vanilla with Butterscotch Icing</div>
+                        <div class="menu-item-price">₹75/piece</div>
+                        <div class="menu-item-description">Sweet vanilla with butterscotch icing</div>
+                        <button class="order-btn" onclick="openOrderForm('Vanilla Cup Cake with Butterscotch Icing', 75)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cupcake</span>
+                        <div class="menu-item-name">Vanilla with Blueberry & Italian Meringue</div>
+                        <div class="menu-item-price">₹130/piece</div>
+                        <div class="menu-item-description">Vanilla with fresh blueberry & Italian meringue buttercream</div>
+                        <button class="order-btn" onclick="openOrderForm('Vanilla Cup Cake with Blueberry & Italian Meringue', 130)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cupcake</span>
+                        <div class="menu-item-name">Vanilla with Strawberry & Italian Meringue</div>
+                        <div class="menu-item-price">₹120/piece</div>
+                        <div class="menu-item-description">Vanilla with fresh strawberry & Italian meringue buttercream</div>
+                        <button class="order-btn" onclick="openOrderForm('Vanilla Cup Cake with Strawberry & Italian Meringue', 120)">Order Now</button>
+                    </div>
+                </div>
+                <p style="text-align: center; color: var(--bakers-rose); font-weight: 600; margin-top: 20px;">🎨 Customized flavours also available upon request</p>
+            </section>
+
+            <!-- TIER CAKES SECTION -->
+            <section class="menu-section" data-category="cakes">
+                <h2>🎂 Tier Cakes</h2>
+                <p class="section-subtitle">Egg or Eggless • Minimum Order: 1 kg • Perfect for celebrations</p>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Black Forest</div>
+                        <div class="menu-item-price">₹1299/kg</div>
+                        <div class="menu-item-description">Classic black forest with chocolate & cherry</div>
+                        <button class="order-btn" onclick="openOrderForm('Black Forest Cake', 1299)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">White Forest</div>
+                        <div class="menu-item-price">₹1099/kg</div>
+                        <div class="menu-item-description">Creamy white forest with fresh cream</div>
+                        <button class="order-btn" onclick="openOrderForm('White Forest Cake', 1099)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Seasonal Fresh Fruit Cake</div>
+                        <div class="menu-item-price">₹2399/kg</div>
+                        <div class="menu-item-description">Mango/Strawberry/Kiwi/Lychee with fresh filling & white chocolate Chantilly</div>
+                        <button class="order-btn" onclick="openOrderForm('Seasonal Fresh Fruit Cake', 2399)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">German Forest</div>
+                        <div class="menu-item-price">₹1500/kg</div>
+                        <div class="menu-item-description">Chocolate fresh cream cake</div>
+                        <button class="order-btn" onclick="openOrderForm('German Forest Cake', 1500)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Butterscotch Fresh Cream Cake</div>
+                        <div class="menu-item-price">₹1200/kg</div>
+                        <div class="menu-item-description">Rich butterscotch with fresh cream</div>
+                        <button class="order-btn" onclick="openOrderForm('Butterscotch Fresh Cream Cake', 1200)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Butterscotch with Italian Meringue Buttercream</div>
+                        <div class="menu-item-price">₹2000/kg</div>
+                        <div class="menu-item-description">Premium butterscotch with Italian meringue buttercream</div>
+                        <button class="order-btn" onclick="openOrderForm('Butterscotch with Italian Meringue Buttercream', 2000)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Rasmalai Fresh Cream Cake Tier</div>
+                        <div class="menu-item-price">₹1500/kg</div>
+                        <div class="menu-item-description">Traditional rasmalai with fresh cream</div>
+                        <button class="order-btn" onclick="openOrderForm('Rasmalai Fresh Cream Cake Tier', 1500)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Rosemilk Cake</div>
+                        <div class="menu-item-price">₹1399/kg</div>
+                        <div class="menu-item-description">Delicate rosemilk flavored cake</div>
+                        <button class="order-btn" onclick="openOrderForm('Rosemilk Cake', 1399)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Dark Chocolate Belgium Truffle</div>
+                        <div class="menu-item-price">₹2499/kg</div>
+                        <div class="menu-item-description">Premium dark chocolate with Belgium truffle</div>
+                        <button class="order-btn" onclick="openOrderForm('Dark Chocolate Belgium Truffle Cake', 2499)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Vanilla with Butter Icing</div>
+                        <div class="menu-item-price">₹1500/kg</div>
+                        <div class="menu-item-description">Classic vanilla cake with smooth butter icing</div>
+                        <button class="order-btn" onclick="openOrderForm('Vanilla Cake with Butter Icing', 1500)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Vanilla with Swiss Meringue Buttercream</div>
+                        <div class="menu-item-price">₹1600/kg</div>
+                        <div class="menu-item-description">Premium vanilla with Swiss meringue buttercream</div>
+                        <button class="order-btn" onclick="openOrderForm('Vanilla with Swiss Meringue Buttercream', 1600)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Milk Chocolate Caramel Truffle</div>
+                        <div class="menu-item-price">₹2499/kg</div>
+                        <div class="menu-item-description">Smooth milk chocolate with caramel truffle</div>
+                        <button class="order-btn" onclick="openOrderForm('Milk Chocolate Caramel Truffle Cake', 2499)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Belgium Dark Chocolate Caramel</div>
+                        <div class="menu-item-price">₹2499/kg</div>
+                        <div class="menu-item-description">Premium Belgium dark chocolate with caramel</div>
+                        <button class="order-btn" onclick="openOrderForm('Belgium Dark Chocolate Caramel', 2499)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Lotus Biscoff with Butter Cream</div>
+                        <div class="menu-item-price">₹2500/kg</div>
+                        <div class="menu-item-description">Popular Lotus Biscoff with buttercream</div>
+                        <button class="order-btn" onclick="openOrderForm('Lotus Biscoff Cake Butter Cream', 2500)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Lotus Biscoff with Whipped Cream</div>
+                        <div class="menu-item-price">₹2100/kg</div>
+                        <div class="menu-item-description">Lotus Biscoff with light whipped cream</div>
+                        <button class="order-btn" onclick="openOrderForm('Lotus Biscoff with Whipped Cream', 2100)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Pinacolada</div>
+                        <div class="menu-item-price">₹1800/kg</div>
+                        <div class="menu-item-description">Tropical pineapple & coconut blend</div>
+                        <button class="order-btn" onclick="openOrderForm('Pinacolada Cake', 1800)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">German Mocha Cake</div>
+                        <div class="menu-item-price">₹2400/kg</div>
+                        <div class="menu-item-description">Coffee & chocolate blend</div>
+                        <button class="order-btn" onclick="openOrderForm('German Mocha Cake', 2400)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Gianduja</div>
+                        <div class="menu-item-price">₹2999/kg</div>
+                        <div class="menu-item-description">Milk chocolate & hazelnut specialty</div>
+                        <button class="order-btn" onclick="openOrderForm('Gianduja Cake', 2999)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">Opera (500g)</div>
+                        <div class="menu-item-price">₹2500</div>
+                        <div class="menu-item-description">Elegant 6-layer opera cake</div>
+                        <button class="order-btn" onclick="openOrderForm('Opera Cake (500g)', 2500)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Cake</span>
+                        <div class="menu-item-name">8 Layer Chocolate Cake (500g)</div>
+                        <div class="menu-item-price">₹2999</div>
+                        <div class="menu-item-description">Chocolate cremeux & caramel masterpiece</div>
+                        <button class="order-btn" onclick="openOrderForm('8 Layer Chocolate Cake', 2999)">Order Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BROWNIES SECTION -->
+            <section class="menu-section" data-category="brownies">
+                <h2>🍫 Brownies</h2>
+                <p class="section-subtitle">Compound or Coverture Chocolate • Minimum Order: 1 kg</p>
+
+                <h3 style="color: var(--deep-cocoa); margin-top: 30px; margin-bottom: 20px;">Brownies with Compound Chocolate</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="category-label">Brownie</span>
+                        <div class="menu-item-name">Classic Plain with Cashew Topping</div>
+                        <div class="menu-item-price">₹1100/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Classic Plain Brownie with Cashew (Compound)', 1100)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Brownie</span>
+                        <div class="menu-item-name">Fudge Brownie</div>
+                        <div class="menu-item-price">₹1300/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Fudge Brownie (Compound)', 1300)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Brownie</span>
+                        <div class="menu-item-name">Death by Chocolate Brownie</div>
+                        <div class="menu-item-price">₹1500/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Death by Chocolate Brownie (Compound)', 1500)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Brownie</span>
+                        <div class="menu-item-name">Nutella Fudge Brownie</div>
+                        <div class="menu-item-price">₹1600/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Nutella Fudge Brownie (Compound)', 1600)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Brownie</span>
+                        <div class="menu-item-name">Oreo Fudge Brownie</div>
+                        <div class="menu-item-price">₹1400/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Oreo Fudge Brownie (Compound)', 1400)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Brownie</span>
+                        <div class="menu-item-name">Double Chocolate Brownie</div>
+                        <div class="menu-item-price">₹1500/kg</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Double Chocolate Brownie (Compound)', 1500)">Order Now</button>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--deep-cocoa); margin-top: 40px; margin-bottom: 20px;">🏆 Brownies with Coverture Chocolate (Premium)</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <span class="category-label">Brownie</span>
+                        <div class="menu-item-name">Classic Plain with Cashew Topping</div>
+                        <div class="menu-item-price">₹1600/kg</div>
+                        <div class="menu-item-description">Premium with Coverture Chocolate</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Classic Plain Brownie with Cashew (Coverture)', 1600)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Brownie</span>
+                        <div class="menu-item-name">Fudge Brownie</div>
+                        <div class="menu-item-price">₹1800/kg</div>
+                        <div class="menu-item-description">Premium with Coverture Chocolate</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Fudge Brownie (Coverture)', 1800)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Brownie</span>
+                        <div class="menu-item-name">Death by Chocolate Brownie</div>
+                        <div class="menu-item-price">₹2000/kg</div>
+                        <div class="menu-item-description">Premium with Coverture Chocolate</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Death by Chocolate Brownie (Coverture)', 2000)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Brownie</span>
+                        <div class="menu-item-name">Nutella Fudge Brownie</div>
+                        <div class="menu-item-price">₹2000/kg</div>
+                        <div class="menu-item-description">Premium with Coverture Chocolate</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Nutella Fudge Brownie (Coverture)', 2000)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Brownie</span>
+                        <div class="menu-item-name">Oreo Fudge Brownie</div>
+                        <div class="menu-item-price">₹1800/kg</div>
+                        <div class="menu-item-description">Premium with Coverture Chocolate</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Oreo Fudge Brownie (Coverture)', 1800)">Order Now</button>
+                    </div>
+                    <div class="menu-item">
+                        <span class="category-label">Brownie</span>
+                        <div class="menu-item-name">Double Chocolate Brownie</div>
+                        <div class="menu-item-price">₹2200/kg</div>
+                        <div class="menu-item-description">Premium with Coverture Chocolate</div>
+                        <div class="minimum-order">📦 Minimum Order: 1 kg</div>
+                        <button class="order-btn" onclick="openOrderForm('Double Chocolate Brownie (Coverture)', 2200)">Order Now</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Order CTA Section -->
+        <div class="order-cta-section">
+            <h3>📞 Ready to Place Your Order?</h3>
+            <p>Contact us directly to customize your order or discuss special requirements</p>
+            <div class="contact-info">
+                <p>
+                    <strong>📱 Call/WhatsApp:</strong> <a href="tel:07871370663">07871370663</a><br>
+                    <strong>📧 Email:</strong> <a href="mailto:info@angelartsacademy.com">info@angelartsacademy.com</a><br>
+                    <strong>📍 Location:</strong> Trichy, Tamil Nadu
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">Angel Arts & Culinary Academy</h3>
+                    <p class="footer-tagline">Premium baked goods & culinary courses in Trichy.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/angelartsacademy" target="_blank" rel="noopener" aria-label="Instagram">
+                            <span>📷</span>
+                        </a>
+                        <a href="https://www.facebook.com/angelartsacademy" target="_blank" rel="noopener" aria-label="Facebook">
+                            <span>👥</span>
+                        </a>
+                        <a href="https://www.youtube.com/@angelartsacademy" target="_blank" rel="noopener" aria-label="YouTube">
+                            <span>▶️</span>
+                        </a>
+                        <a href="https://wa.me/917871370663" target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <span>💬</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="menu.html">Order Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>📍 Trichy, Tamil Nadu</li>
+                        <li><a href="tel:07871370663">📞 07871370663</a></li>
+                        <li><a href="mailto:info@angelartsacademy.com">✉️ info@angelartsacademy.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p class="newsletter-text">Get updates on new menu items & special offers!</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email" required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Angel Arts & Culinary Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function filterMenu(category) {
+            // Update button states
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Show/hide sections
+            if (category === 'all') {
+                document.querySelectorAll('[data-category]').forEach(section => {
+                    section.style.display = 'block';
+                });
+            } else {
+                document.querySelectorAll('[data-category]').forEach(section => {
+                    if (section.dataset.category === category) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        function openOrderForm(itemName, price) {
+            // This function can be enhanced to open a modal or redirect to contact page
+            alert(`Thank you for your interest in ${itemName}!\n\nPrice: ₹${price}\n\nPlease contact us to place your order:\n📱 07871370663\n📧 info@angelartsacademy.com`);
+        }
+    </script>
+</body>
+</html>
