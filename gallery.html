@@ -3,229 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse our gallery of student work, class photos, and beautiful baked creations from Angel Arts & Culinary Academy.">
+    <meta name="description" content="Browse our gallery of cakes, pastries, breads, beverages and student works from Angel Arts & Culinary Academy.">
     <title>Gallery — Angel Arts & Culinary Academy</title>
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Sticky Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="index.html" class="logo">
-                    <span class="logo-text">Angel Arts</span>
-                    <span class="logo-subtitle">Culinary Academy</span>
-                </a>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="gallery.html" class="active">Gallery</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="contact.html" class="btn-nav-cta">Enroll / Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Our Gallery</h1>
-            <p>Student creations, class moments, and the beautiful art of baking.</p>
-        </div>
-    </section>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Angel Arts</span>
+                <span class="logo-subtitle">Culinary Academy</span>
+            </a>
 
-    <!-- Gallery Grid -->
-    <section class="gallery-full">
-        <div class="container">
-            <div class="gallery-filters">
-                <button class="gallery-filter-btn active" data-filter="all">All</button>
-                <button class="gallery-filter-btn" data-filter="cakes">Cakes</button>
-                <button class="gallery-filter-btn" data-filter="bread">Bread</button>
-                <button class="gallery-filter-btn" data-filter="pastries">Pastries</button>
-                <button class="gallery-filter-btn" data-filter="classes">Classes</button>
-            </div>
-            <div class="gallery-grid-full" id="galleryGrid">
-                <!-- Gallery Items -->
-                <div class="gallery-item-full" data-category="cakes">
-                    <div class="gallery-image-placeholder">
-                        <span>📸 Layered Cake with Buttercream</span>
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Layered Cake with Buttercream</span>
-                    </div>
-                </div>
-                <div class="gallery-item-full" data-category="classes">
-                    <div class="gallery-image-placeholder">
-                        <span>📸 Hands Decorating Cake</span>
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Hands-on Decorating Class</span>
-                    </div>
-                </div>
-                <div class="gallery-item-full" data-category="bread">
-                    <div class="gallery-image-placeholder">
-                        <span>📸 Fresh Sourdough Loaves</span>
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Fresh Sourdough Loaves</span>
-                    </div>
-                </div>
-                <div class="gallery-item-full" data-category="cakes">
-                    <div class="gallery-image-placeholder">
-                        <span>📸 Wedding Cake Design</span>
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Wedding Cake Design</span>
-                    </div>
-                </div>
-                <div class="gallery-item-full" data-category="classes">
-                    <div class="gallery-image-placeholder">
-                        <span>📸 Students in Class</span>
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Students Learning Together</span>
-                    </div>
-                </div>
-                <div class="gallery-item-full" data-category="pastries">
-                    <div class="gallery-image-placeholder">
-                        <span>📸 French Pastries</span>
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">French Pastries Collection</span>
-                    </div>
-                </div>
-                <div class="gallery-item-full" data-category="cakes">
-                    <div class="gallery-image-placeholder">
-                        <span>📸 Birthday Cake</span>
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Custom Birthday Cake</span>
-                    </div>
-                </div>
-                <div class="gallery-item-full" data-category="bread">
-                    <div class="gallery-image-placeholder">
-                        <span>📸 Artisan Bread Basket</span>
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Artisan Bread Basket</span>
-                    </div>
-                </div>
-                <div class="gallery-item-full" data-category="classes">
-                    <div class="gallery-image-placeholder">
-                        <span>📸 Instructor Teaching</span>
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Instructor Teaching Technique</span>
-                    </div>
-                </div>
-                <div class="gallery-item-full" data-category="pastries">
-                    <div class="gallery-image-placeholder">
-                        <span>📸 Éclairs & Profiteroles</span>
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Éclairs & Profiteroles</span>
-                    </div>
-                </div>
-                <div class="gallery-item-full" data-category="cakes">
-                    <div class="gallery-image-placeholder">
-                        <span>📸 Fondant Cake Art</span>
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Fondant Cake Art</span>
-                    </div>
-                </div>
-                <div class="gallery-item-full" data-category="classes">
-                    <div class="gallery-image-placeholder">
-                        <span>📸 Student Work Display</span>
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Student Work Display</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span><span></span><span></span>
+            </button>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
-        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
-        <button class="lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
-        <div class="lightbox-content">
-            <img id="lightboxImage" src="" alt="">
-            <div class="lightbox-caption" id="lightboxCaption"></div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn-nav-cta">Enroll / Contact</a></li>
+            </ul>
         </div>
     </div>
+</nav>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-logo">Angel Arts & Culinary Academy</h3>
-                    <p class="footer-tagline">Practical baking courses in Trichy. Master the art of baking with hands-on training.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/angelartsacademy" target="_blank" rel="noopener" aria-label="Instagram">
-                            <span>📷</span>
-                        </a>
-                        <a href="https://www.facebook.com/angelartsacademy" target="_blank" rel="noopener" aria-label="Facebook">
-                            <span>👥</span>
-                        </a>
-                        <a href="https://www.youtube.com/@angelartsacademy" target="_blank" rel="noopener" aria-label="YouTube">
-                            <span>▶️</span>
-                        </a>
-                        <a href="https://wa.me/917871370663" target="_blank" rel="noopener" aria-label="WhatsApp">
-                            <span>💬</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <ul class="footer-contact">
-                        <li>📍 Trichy, Tamil Nadu</li>
-                        <li><a href="tel:07871370663">📞 07871370663</a></li>
-                        <li><a href="mailto:info@angelartsacademy.com">✉️ info@angelartsacademy.com</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <p class="newsletter-text">Get 10% off your trial class when you subscribe!</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Your email" required aria-label="Email address">
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
-                    <p class="footer-legal">FSSAI Certified • Licensed Training Center</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Angel Arts & Culinary Academy. All rights reserved.</p>
-            </div>
+<!-- PAGE HEADER -->
+<section class="page-header">
+    <div class="container">
+        <h1>Our Gallery</h1>
+        <p>Student creations, class moments and beautiful baked art.</p>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-full">
+    <div class="container">
+
+        <!-- CAKES -->
+        <h2 class="gallery-section-title">🎂 Cakes</h2>
+        <div class="gallery-grid-full">
+            <div class="gallery-item-full"><img src="gallery/weddingcake.jpeg" alt="Wedding Cake"></div>
+            <div class="gallery-item-full"><img src="gallery/blueweddingcake.jpeg" alt="Blue Wedding Cake"></div>
+            <div class="gallery-item-full"><img src="gallery/buttercream_cake.jpeg" alt="Buttercream Cake"></div>
+            <div class="gallery-item-full"><img src="gallery/buttercreamcake.jpeg" alt="Buttercream Cake Design"></div>
+            <div class="gallery-item-full"><img src="gallery/opera cake.jpeg" alt="Opera Cake"></div>
         </div>
-    </footer>
 
-    <script src="js/main.js"></script>
+        <!-- PASTRIES & DESSERTS -->
+        <h2 class="gallery-section-title">🍰 Pastries & Desserts</h2>
+        <div class="gallery-grid-full">
+            <div class="gallery-item-full"><img src="gallery/Cheesecake.jpeg" alt="Cheesecake"></div>
+            <div class="gallery-item-full"><img src="gallery/chocolate cheesecake.jpeg" alt="Chocolate Cheesecake"></div>
+            <div class="gallery-item-full"><img src="gallery/coffee_mousse.jpeg" alt="Coffee Mousse"></div>
+            <div class="gallery-item-full"><img src="gallery/lemon_mousse.jpeg" alt="Lemon Mousse"></div>
+            <div class="gallery-item-full"><img src="gallery/viral la fruit dessert.jpeg" alt="Fruit Dessert"></div>
+        </div>
+
+        <!-- BREADS -->
+        <h2 class="gallery-section-title">🥐 Breads & Viennoiserie</h2>
+        <div class="gallery-grid-full">
+            <div class="gallery-item-full"><img src="gallery/croissant.jpeg" alt="Croissant"></div>
+            <div class="gallery-item-full"><img src="gallery/pain_au_chocolat.jpeg" alt="Pain au Chocolat"></div>
+            <div class="gallery-item-full"><img src="gallery/custard.jpeg" alt="Custard Bun"></div>
+        </div>
+
+        <!-- BEVERAGES -->
+        <h2 class="gallery-section-title">🧋 Beverages</h2>
+        <div class="gallery-grid-full">
+            <div class="gallery-item-full"><img src="gallery/Milkshake.jpeg" alt="Milkshake"></div>
+            <div class="gallery-item-full"><img src="gallery/pinacolada.jpeg" alt="Pina Colada"></div>
+            <div class="gallery-item-full"><img src="gallery/mango.jpeg" alt="Mango Drink"></div>
+        </div>
+
+        <!-- STUDENT WORK -->
+        <h2 class="gallery-section-title">👩‍🍳 Student Works & Classes</h2>
+        <div class="gallery-grid-full">
+            <div class="gallery-item-full"><img src="gallery/studentwork1.jpeg" alt="Student Work 1"></div>
+            <div class="gallery-item-full"><img src="gallery/student work2.jpeg" alt="Student Work 2"></div>
+            <div class="gallery-item-full"><img src="gallery/capybara.jpeg" alt="Creative Cake"></div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <p>&copy; 2024 Angel Arts & Culinary Academy. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
-

@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse our baking courses: short workshops, professional diplomas, and cake-decorating classes in Trichy.">
+    <meta name="description" content="Detailed baking course information from Angel Arts & Culinary Academy in Trichy, including workshops, professional courses, diploma programs, and customized classes.">
     <title>Courses — Angel Arts & Culinary Academy</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Sticky Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="index.html" class="logo">
-                    <span class="logo-text">Angel Arts</span>
-                    <span class="logo-subtitle">Culinary Academy</span>
+                    <span class="logo-mark" aria-hidden="true">A</span>
+                    <span class="logo-lockup">
+                        <span class="logo-text">Angel Arts</span>
+                        <span class="logo-subtitle">Baking & Culinary Academy</span>
+                    </span>
                 </a>
                 <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                     <span></span>
@@ -27,6 +26,7 @@
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="menu.html">Order Menu</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="testimonials.html">Testimonials</a></li>
@@ -37,15 +37,19 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <section class="page-header page-header-luxury">
         <div class="container">
-            <h1>Our Courses</h1>
-            <p>From short workshops to professional diplomas — find the perfect course for your baking journey.</p>
+            <span class="section-label">Course Catalogue</span>
+            <h1>Detailed baking programs for every stage of your journey.</h1>
+            <p>Angel Arts offers short skill-building workshops, professional certificate programs, long-term diplomas, and customized private classes in Trichy.</p>
+            <div class="header-pill-row">
+                <span>Hands-on practical training</span>
+                <span>Beginner to professional levels</span>
+                <span>Selected government-certified programs</span>
+            </div>
         </div>
     </section>
 
-    <!-- Course Filters -->
     <section class="course-filters">
         <div class="container">
             <div class="filter-buttons">
@@ -54,238 +58,472 @@
                 <button class="filter-btn" data-filter="professional">Professional</button>
                 <button class="filter-btn" data-filter="diploma">Diploma</button>
                 <button class="filter-btn" data-filter="workshop">Workshops</button>
+                <button class="filter-btn" data-filter="customized">Customized</button>
             </div>
         </div>
     </section>
 
-    <!-- Courses Grid -->
     <section class="courses-section">
         <div class="container">
-            <div class="courses-grid" id="coursesGrid">
-                <!-- Basic to Advanced Baking -->
-                <div class="course-card" data-category="short professional">
-                    <div class="course-image">
-                        <div class="course-image-placeholder">
-                            <span>📸 Course Photo</span>
-                        </div>
-                        <span class="course-badge">Popular</span>
-                    </div>
-                    <div class="course-content">
-                        <h3>Basic to Advanced Baking</h3>
-                        <p class="course-description">Learn breads, cakes, cookies & decoration in this comprehensive program.</p>
-                        <div class="course-meta">
-                            <span class="course-duration">⏱️ 15–20 days</span>
-                            <span class="course-level">Beginner to Advanced</span>
-                        </div>
-                        <div class="course-modules">
-                            <strong>Modules:</strong>
-                            <ul>
-                                <li>Bread making (sourdough, brioche, focaccia)</li>
-                                <li>Cakes & sponges</li>
-                                <li>Cookies & biscuits</li>
-                                <li>Basic decoration techniques</li>
-                            </ul>
-                        </div>
-                        <div class="course-prerequisites">
-                            <strong>Prerequisites:</strong> None — perfect for beginners!
-                        </div>
-                        <div class="course-price">Starting at ₹8,999</div>
-                        <button class="btn btn-primary btn-block enroll-btn" data-course="Basic to Advanced Baking">Enroll Now</button>
-                    </div>
-                </div>
+            <span class="section-label">Long-Term Programs</span>
+            <h2 class="section-title">Diploma and professional programs</h2>
+            <p class="section-subtitle">Designed for learners who want deeper technical mastery, stronger portfolios, and career or business readiness.</p>
 
-                <!-- Professional Diploma -->
-                <div class="course-card" data-category="diploma professional">
+            <div class="courses-grid" id="longTermGrid">
+                <article class="course-card" data-category="diploma">
                     <div class="course-image">
-                        <div class="course-image-placeholder">
-                            <span>📸 Course Photo</span>
-                        </div>
-                        <span class="course-badge">Diploma</span>
+                        <img src="gallery/diploma.jpeg" alt="Diploma in Bakery and Confectionery">
+                        <span class="course-badge">Govt Cert</span>
                     </div>
                     <div class="course-content">
-                        <h3>Professional Baking Diploma</h3>
-                        <p class="course-description">Comprehensive 3-month program covering all aspects of professional baking and pastry arts.</p>
-                        <div class="course-meta">
-                            <span class="course-duration">⏱️ 3 months</span>
-                            <span class="course-level">Professional</span>
+                        <p class="course-tag">Diploma Program</p>
+                        <h3>Diploma in Bakery & Confectionery</h3>
+                        <p class="course-description">A full-length professional diploma covering bakery production, pastry, confectionery, hygiene, and bakery operations with structured practical sessions.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>9 months</strong></div>
+                            <div class="detail-card"><span>Format</span><strong>Intensive diploma</strong></div>
+                            <div class="detail-card"><span>Ideal for</span><strong>Career builders</strong></div>
                         </div>
                         <div class="course-modules">
-                            <strong>Modules:</strong>
+                            <strong>What you will cover</strong>
                             <ul>
-                                <li>Advanced bread techniques</li>
-                                <li>French pastries & viennoiserie</li>
-                                <li>Chocolate work & confectionery</li>
-                                <li>Advanced cake decoration</li>
-                                <li>Business & bakery management</li>
+                                <li>Breads, sponge cakes, celebration cakes, pastries, and confectionery</li>
+                                <li>French pastry basics, layered desserts, and refined finishing techniques</li>
+                                <li>Commercial hygiene, production workflow, costing, and bakery management</li>
                             </ul>
                         </div>
-                        <div class="course-prerequisites">
-                            <strong>Prerequisites:</strong> Basic baking knowledge recommended
+                        <p class="course-note"><strong>Best suited for:</strong> students preparing for bakery jobs, serious home bakers, and those planning a bakery business.</p>
+                        <div class="course-footer">
+                            <div class="course-price">₹2,14,999</div>
+                            <div class="course-actions">
+                                <a href="pdfs/9 months diploma - Google Docs (1).pdf" download class="btn btn-outline">Download Syllabus</a>
+                                <button class="btn btn-primary enroll-btn" data-course="Diploma in Bakery & Confectionery (9 months)">Enroll Now</button>
+                            </div>
                         </div>
-                        <div class="course-price">₹35,999</div>
-                        <button class="btn btn-primary btn-block enroll-btn" data-course="Professional Baking Diploma">Enroll Now</button>
                     </div>
-                </div>
+                </article>
 
-                <!-- Cake Decorating Workshop -->
-                <div class="course-card" data-category="workshop short">
+                <article class="course-card" data-category="diploma">
                     <div class="course-image">
-                        <div class="course-image-placeholder">
-                            <span>📸 Course Photo</span>
-                        </div>
-                        <span class="course-badge">Workshop</span>
+                        <img src="gallery/diploma1.jpeg" alt="6 month bakery diploma">
+                        <span class="course-badge">Govt Cert</span>
                     </div>
                     <div class="course-content">
-                        <h3>Cake Decorating Workshop</h3>
-                        <p class="course-description">Master buttercream piping, fondant work, and modern cake design in this intensive 2-day workshop.</p>
-                        <div class="course-meta">
-                            <span class="course-duration">⏱️ 2 days</span>
-                            <span class="course-level">All Levels</span>
+                        <p class="course-tag">Diploma Program</p>
+                        <h3>Diploma in Bakery & Confectionery</h3>
+                        <p class="course-description">A shorter diploma path for learners who want strong bakery and confectionery fundamentals with guided practical output and certification.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>6 months</strong></div>
+                            <div class="detail-card"><span>Format</span><strong>Structured diploma</strong></div>
+                            <div class="detail-card"><span>Ideal for</span><strong>Focused upskilling</strong></div>
                         </div>
                         <div class="course-modules">
-                            <strong>You'll Learn:</strong>
+                            <strong>What you will cover</strong>
                             <ul>
-                                <li>Buttercream piping techniques</li>
-                                <li>Fondant covering & modeling</li>
-                                <li>Modern cake design trends</li>
-                                <li>Color theory for cakes</li>
+                                <li>Core cakes, cookies, breads, frostings, fillings, and bakery essentials</li>
+                                <li>Workflow planning, finishing control, and consistent product execution</li>
+                                <li>Useful foundations for home bakery launches and production jobs</li>
                             </ul>
                         </div>
-                        <div class="course-prerequisites">
-                            <strong>Prerequisites:</strong> None
+                        <p class="course-note"><strong>Best suited for:</strong> learners who want a serious certification route in a more compact time frame.</p>
+                        <div class="course-footer">
+                            <div class="course-price">₹1,45,999</div>
+                            <div class="course-actions">
+                                <a href="pdfs/6 months diploma - Google Docs (1).pdf" download class="btn btn-outline">Download Syllabus</a>
+                                <button class="btn btn-primary enroll-btn" data-course="Diploma in Bakery & Confectionery (6 months)">Enroll Now</button>
+                            </div>
                         </div>
-                        <div class="course-price">₹3,999</div>
-                        <button class="btn btn-primary btn-block enroll-btn" data-course="Cake Decorating Workshop">Enroll Now</button>
                     </div>
-                </div>
+                </article>
 
-                <!-- Bread Making Intensive -->
-                <div class="course-card" data-category="workshop short">
+                <article class="course-card" data-category="diploma">
                     <div class="course-image">
-                        <div class="course-image-placeholder">
-                            <span>📸 Course Photo</span>
-                        </div>
-                        <span class="course-badge">Workshop</span>
+                        <img src="gallery/classicdessert_student.jpeg" alt="French pastry diploma">
+                        <span class="course-badge">Govt Cert</span>
                     </div>
                     <div class="course-content">
-                        <h3>Bread Making Intensive</h3>
-                        <p class="course-description">Deep dive into artisan bread making — from sourdough starters to perfect crusts.</p>
-                        <div class="course-meta">
-                            <span class="course-duration">⏱️ 3 days</span>
-                            <span class="course-level">Intermediate</span>
+                        <p class="course-tag">Specialized Diploma</p>
+                        <h3>Diploma in Bakery & French Pastries</h3>
+                        <p class="course-description">A specialized diploma built around pastry finesse, layered desserts, refined textures, and plated presentation with a French pastry focus.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>4 months</strong></div>
+                            <div class="detail-card"><span>Focus</span><strong>French pastry</strong></div>
+                            <div class="detail-card"><span>Ideal for</span><strong>Artisan bakers</strong></div>
                         </div>
                         <div class="course-modules">
-                            <strong>You'll Make:</strong>
+                            <strong>What you will cover</strong>
                             <ul>
-                                <li>Sourdough bread</li>
-                                <li>Brioche & enriched doughs</li>
-                                <li>Focaccia & flatbreads</li>
-                                <li>Bagels & pretzels</li>
+                                <li>Tarts, mousse desserts, laminated pastry basics, fillings, and finishing</li>
+                                <li>Texture balance, layering, glaze work, and premium presentation</li>
+                                <li>Product refinement for boutique dessert menus and pastry counters</li>
                             </ul>
                         </div>
-                        <div class="course-prerequisites">
-                            <strong>Prerequisites:</strong> Basic baking experience helpful
+                        <p class="course-note"><strong>Best suited for:</strong> students drawn to elegant pastries, plated desserts, and premium dessert concepts.</p>
+                        <div class="course-footer">
+                            <div class="course-price">₹1,10,000</div>
+                            <div class="course-actions">
+                                <a href="pdfs/4 Months Diploma pdf.pdf" download class="btn btn-outline">Download Syllabus</a>
+                                <button class="btn btn-primary enroll-btn" data-course="Diploma in Bakery & French Pastries (4 months)">Enroll Now</button>
+                            </div>
                         </div>
-                        <div class="course-price">₹4,999</div>
-                        <button class="btn btn-primary btn-block enroll-btn" data-course="Bread Making Intensive">Enroll Now</button>
                     </div>
-                </div>
+                </article>
 
-                <!-- Pastry & Desserts -->
-                <div class="course-card" data-category="short professional">
+                <article class="course-card" data-category="professional">
                     <div class="course-image">
-                        <div class="course-image-placeholder">
-                            <span>📸 Course Photo</span>
-                        </div>
+                        <img src="gallery/bread3.jpeg" alt="Professional bakery and confectionery course">
+                        <span class="course-badge">Govt Cert</span>
                     </div>
                     <div class="course-content">
-                        <h3>Pastry & Desserts Masterclass</h3>
-                        <p class="course-description">Learn French pastries, tarts, éclairs, and plated desserts in this 10-day intensive.</p>
-                        <div class="course-meta">
-                            <span class="course-duration">⏱️ 10 days</span>
-                            <span class="course-level">Intermediate</span>
+                        <p class="course-tag">Professional Course</p>
+                        <h3>Professional Course in Bakery & Confectionery</h3>
+                        <p class="course-description">A 2-month professional certificate program with concentrated practical training across high-demand bakery and confectionery products.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>2 months</strong></div>
+                            <div class="detail-card"><span>Certificate</span><strong>Government-certified</strong></div>
+                            <div class="detail-card"><span>Ideal for</span><strong>Fast-track learners</strong></div>
                         </div>
                         <div class="course-modules">
-                            <strong>You'll Master:</strong>
+                            <strong>What you will cover</strong>
                             <ul>
-                                <li>Pâte à choux (éclairs, profiteroles)</li>
-                                <li>Puff pastry & laminated doughs</li>
-                                <li>Tarts & quiches</li>
-                                <li>Plated dessert presentation</li>
+                                <li>Popular cakes, breads, tea cakes, cookies, desserts, and frosting work</li>
+                                <li>Recipe control, product consistency, and organized production flow</li>
+                                <li>Strong training for bakery startup plans or job preparation</li>
                             </ul>
                         </div>
-                        <div class="course-prerequisites">
-                            <strong>Prerequisites:</strong> Basic baking skills
+                        <p class="course-note"><strong>Best suited for:</strong> students who want serious practical growth without committing to a long diploma.</p>
+                        <div class="course-footer">
+                            <div class="course-price">₹74,999</div>
+                            <div class="course-actions">
+                                <a href="pdfs/2 - months  (1).pdf" download class="btn btn-outline">Download Syllabus</a>
+                                <button class="btn btn-primary enroll-btn" data-course="Professional Course in Bakery & Confectionery (2 months)">Enroll Now</button>
+                            </div>
                         </div>
-                        <div class="course-price">₹12,999</div>
-                        <button class="btn btn-primary btn-block enroll-btn" data-course="Pastry & Desserts Masterclass">Enroll Now</button>
                     </div>
-                </div>
+                </article>
 
-                <!-- Teen Weekend Classes -->
-                <div class="course-card" data-category="workshop short">
+                <article class="course-card" data-category="professional">
                     <div class="course-image">
-                        <div class="course-image-placeholder">
-                            <span>📸 Course Photo</span>
-                        </div>
-                        <span class="course-badge">Teen Program</span>
+                        <img src="gallery/babka.jpeg" alt="Professional baking course">
+                        <span class="course-badge">Govt Cert</span>
                     </div>
                     <div class="course-content">
-                        <h3>Teen Weekend Baking Classes</h3>
-                        <p class="course-description">Fun, age-appropriate baking classes for teens (13–17 years) every Saturday.</p>
-                        <div class="course-meta">
-                            <span class="course-duration">⏱️ 4 hours/week</span>
-                            <span class="course-level">Teens</span>
+                        <p class="course-tag">Professional Course</p>
+                        <h3>Professional Course in Baking</h3>
+                        <p class="course-description">A 30-day intensive course that builds practical confidence in cakes, frostings, cookies, breads, and sale-ready bakery products.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>30 days</strong></div>
+                            <div class="detail-card"><span>Format</span><strong>Daily practicals</strong></div>
+                            <div class="detail-card"><span>Ideal for</span><strong>New professionals</strong></div>
                         </div>
                         <div class="course-modules">
-                            <strong>Weekly Themes:</strong>
+                            <strong>What you will cover</strong>
                             <ul>
-                                <li>Cookies & brownies</li>
-                                <li>Cupcakes & frosting</li>
-                                <li>Simple cakes</li>
-                                <li>Bread basics</li>
+                                <li>Foundation cakes, cookies, tea-time bakes, and frosting applications</li>
+                                <li>Working methods that help improve speed, structure, and finish</li>
+                                <li>Useful preparation for custom orders, small business sales, and continued study</li>
                             </ul>
                         </div>
-                        <div class="course-prerequisites">
-                            <strong>Prerequisites:</strong> Ages 13–17
+                        <p class="course-note"><strong>Best suited for:</strong> ambitious beginners and home bakers ready for structured professional training.</p>
+                        <div class="course-footer">
+                            <div class="course-price">₹51,999</div>
+                            <div class="course-actions">
+                                <a href="pdfs/1 Month Professional in Baking.pdf" download class="btn btn-outline">Download Syllabus</a>
+                                <button class="btn btn-primary enroll-btn" data-course="Professional Course in Baking (30 days)">Enroll Now</button>
+                            </div>
                         </div>
-                        <div class="course-price">₹2,999/month</div>
-                        <button class="btn btn-primary btn-block enroll-btn" data-course="Teen Weekend Baking Classes">Enroll Now</button>
                     </div>
-                </div>
+                </article>
+            </div>
+
+            <div class="course-section-break"></div>
+
+            <span class="section-label">Short Workshops</span>
+            <h2 class="section-title">Short and hands-on baking classes</h2>
+            <p class="section-subtitle">Quick, practical classes with detailed recipe focus, skill-building outcomes, and product-specific techniques.</p>
+
+            <div class="courses-grid" id="shortCoursesGrid">
+                <article class="course-card" data-category="short workshop">
+                    <div class="course-image"><img src="gallery/buttercreamcake.jpeg" alt="Basic cake baking class"></div>
+                    <div class="course-content">
+                        <p class="course-tag">Workshop Level 1</p>
+                        <h3>Basic Cake Baking & Frosting</h3>
+                        <p class="course-description">A beginner-friendly workshop introducing sponge basics, cupcake methods, tea cakes, and essential frosting styles.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>2 days</strong></div>
+                            <div class="detail-card"><span>Timing</span><strong>10:00 to 14:00</strong></div>
+                            <div class="detail-card"><span>Level</span><strong>Beginner</strong></div>
+                        </div>
+                        <div class="course-modules">
+                            <strong>Includes</strong>
+                            <ul>
+                                <li>Vanilla butter cake, cupcakes, plum-style cake, and black forest basics</li>
+                                <li>Whipped cream, ganache, and cream cheese style icings</li>
+                                <li>Core baking confidence for first-time learners</li>
+                            </ul>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">₹3,999</div>
+                            <div class="course-actions"><button class="btn btn-primary enroll-btn" data-course="BASIC CAKE BAKING & FROSTING (Level 1)">Enroll Now</button></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card" data-category="short workshop">
+                    <div class="course-image"><img src="gallery/chocolate cheesecake.jpeg" alt="Intermediate cake baking class"></div>
+                    <div class="course-content">
+                        <p class="course-tag">Workshop Level 2</p>
+                        <h3>Basic Cake Baking & Frosting</h3>
+                        <p class="course-description">An intermediate step focused on richer cake structures, brownies, cookies, and egg-based recipe control with frosting practice.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>2 days</strong></div>
+                            <div class="detail-card"><span>Timing</span><strong>10:00 to 14:00</strong></div>
+                            <div class="detail-card"><span>Level</span><strong>Beginner+</strong></div>
+                        </div>
+                        <div class="course-modules">
+                            <strong>Includes</strong>
+                            <ul>
+                                <li>Chocolate cupcake, vanilla cake, fudge brownie, and cookie basics</li>
+                                <li>Whipped cream and ganache handling</li>
+                                <li>Better control over batter texture and baking finish</li>
+                            </ul>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">₹5,500</div>
+                            <div class="course-actions"><button class="btn btn-primary enroll-btn" data-course="BASIC CAKE BAKING & FROSTING (Level 2)">Enroll Now</button></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card" data-category="short workshop">
+                    <div class="course-image"><img src="gallery/Chocolate_Raspberrycake.jpeg" alt="Advanced cake baking and frosting workshop"></div>
+                    <div class="course-content">
+                        <p class="course-tag">Workshop Level 3</p>
+                        <h3>Cake Baking & Frosting</h3>
+                        <p class="course-description">A more complete cake course with multiple flavors, layered finishing, and frosting combinations for aspiring cake sellers.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>3 days</strong></div>
+                            <div class="detail-card"><span>Timing</span><strong>10:00 to 14:00</strong></div>
+                            <div class="detail-card"><span>Certification</span><strong>Optional Govt Cert</strong></div>
+                        </div>
+                        <div class="course-modules">
+                            <strong>Includes</strong>
+                            <ul>
+                                <li>Vanilla, chocolate, red velvet, plum, dates cake, brownie, and forest cake styles</li>
+                                <li>Ganache, buttercream, and whipped cream cheese frosting applications</li>
+                                <li>Ideal stepping stone toward custom cake orders</li>
+                            </ul>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">₹6,999 to ₹7,999</div>
+                            <div class="course-actions"><button class="btn btn-primary enroll-btn" data-course="CAKE BAKING & FROSTING (Level 3)">Enroll Now</button></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card" data-category="short workshop">
+                    <div class="course-image"><img src="gallery/weddingcake.jpeg" alt="Cake decoration course"></div>
+                    <div class="course-content">
+                        <p class="course-tag">Design-Focused Workshop</p>
+                        <h3>Cake and Cake Decoration</h3>
+                        <p class="course-description">A detailed decoration course covering premium finishes, layer styling, themed cakes, and advanced visual presentation.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>8 to 10 days</strong></div>
+                            <div class="detail-card"><span>Timing</span><strong>09:30 to 14:30</strong></div>
+                            <div class="detail-card"><span>Level</span><strong>Intermediate</strong></div>
+                        </div>
+                        <div class="course-modules">
+                            <strong>Includes</strong>
+                            <ul>
+                                <li>Swiss meringue buttercream, diplomat cream, fondant, mirror glaze, geode, ombre, and tier work</li>
+                                <li>Egg and eggless approaches where relevant</li>
+                                <li>Strong value for custom cake decorators and celebration cake specialists</li>
+                            </ul>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">₹20,999</div>
+                            <div class="course-actions"><button class="btn btn-primary enroll-btn" data-course="CAKE AND CAKE DECORATION">Enroll Now</button></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card" data-category="short workshop">
+                    <div class="course-image"><img src="gallery/classic dessert1.jpeg" alt="Advance in baking course"></div>
+                    <div class="course-content">
+                        <p class="course-tag">Advanced Workshop</p>
+                        <h3>Advance in Baking</h3>
+                        <p class="course-description">An expanded workshop path for learners who want broader menu coverage and more polished finishing capability.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>12 to 15 days</strong></div>
+                            <div class="detail-card"><span>Timing</span><strong>09:30 to 14:30</strong></div>
+                            <div class="detail-card"><span>Level</span><strong>Advanced</strong></div>
+                        </div>
+                        <div class="course-modules">
+                            <strong>Includes</strong>
+                            <ul>
+                                <li>Cupcakes, travel cakes, sponge work, fondant elements, mirror glaze, truffle cakes, and design practice</li>
+                                <li>More product range for students building commercial confidence</li>
+                            </ul>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">₹27,999</div>
+                            <div class="course-actions"><button class="btn btn-primary enroll-btn" data-course="ADVANCE IN BAKING">Enroll Now</button></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card" data-category="short workshop">
+                    <div class="course-image"><img src="gallery/cookie.jpg" alt="Cookies workshop"></div>
+                    <div class="course-content">
+                        <p class="course-tag">One-Day Workshop</p>
+                        <h3>Cookies and Exotic Cookies</h3>
+                        <p class="course-description">A practical cookie workshop featuring classic, savory, multigrain, and premium flavor combinations suitable for gifting and sale.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>1 day</strong></div>
+                            <div class="detail-card"><span>Timing</span><strong>10:00 to 13:00 / 14:30</strong></div>
+                            <div class="detail-card"><span>Range</span><strong>Classic to premium</strong></div>
+                        </div>
+                        <div class="course-modules">
+                            <strong>Includes</strong>
+                            <ul>
+                                <li>Butter, jam, masala, coconut, millet, florentine, and chocolate-forward styles</li>
+                                <li>Useful for snack box menus and bakery counters</li>
+                            </ul>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">₹2,499 to ₹6,999</div>
+                            <div class="course-actions"><button class="btn btn-primary enroll-btn" data-course="COOKIES">Enroll Now</button></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card" data-category="short workshop">
+                    <div class="course-image"><img src="gallery/bread1.jpeg" alt="Bread workshop"></div>
+                    <div class="course-content">
+                        <p class="course-tag">One-Day Workshop</p>
+                        <h3>Breads</h3>
+                        <p class="course-description">Learn dough handling, proofing, shaping, and baking for soft breads and versatile everyday bakery products.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>1 day</strong></div>
+                            <div class="detail-card"><span>Timing</span><strong>09:30 to 14:30</strong></div>
+                            <div class="detail-card"><span>Level</span><strong>All levels</strong></div>
+                        </div>
+                        <div class="course-modules">
+                            <strong>Includes</strong>
+                            <ul>
+                                <li>Hokkaido bread, buns, garlic bread, sandwich bread, and multigrain variants</li>
+                                <li>Key dough technique and shaping discipline</li>
+                            </ul>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">₹5,499</div>
+                            <div class="course-actions"><button class="btn btn-primary enroll-btn" data-course="BREADS">Enroll Now</button></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card" data-category="short workshop">
+                    <div class="course-image"><img src="gallery/Cheesecake.jpeg" alt="Cheesecake workshop"></div>
+                    <div class="course-content">
+                        <p class="course-tag">Two-Day Workshop</p>
+                        <h3>Cheesecake</h3>
+                        <p class="course-description">A focused cheesecake class for learners who want baked and chilled varieties with better structure, texture, and flavor balance.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>2 days</strong></div>
+                            <div class="detail-card"><span>Timing</span><strong>09:30 to 14:30</strong></div>
+                            <div class="detail-card"><span>Styles</span><strong>Baked and chilled</strong></div>
+                        </div>
+                        <div class="course-modules">
+                            <strong>Includes</strong>
+                            <ul>
+                                <li>New York, Biscoff, Basque, mango, and fusion-style cheesecakes</li>
+                                <li>Great for premium dessert menus and celebration orders</li>
+                            </ul>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">₹9,499</div>
+                            <div class="course-actions"><button class="btn btn-primary enroll-btn" data-course="CHEESECAKE">Enroll Now</button></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card" data-category="short workshop">
+                    <div class="course-image"><img src="gallery/Milkshake.jpeg" alt="Boba milkshake workshop"></div>
+                    <div class="course-content">
+                        <p class="course-tag">One-Day Workshop</p>
+                        <h3>Boba Milkshake</h3>
+                        <p class="course-description">A trend-focused beverage class covering boba pearls, jellies, shakes, syrups, and drink assembly.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Duration</span><strong>1 day</strong></div>
+                            <div class="detail-card"><span>Timing</span><strong>09:30 to 14:30</strong></div>
+                            <div class="detail-card"><span>Format</span><strong>Beverage practical</strong></div>
+                        </div>
+                        <div class="course-modules">
+                            <strong>Includes</strong>
+                            <ul>
+                                <li>Boba pearls, coffee jelly, coconut jelly, syrups, and shake combinations</li>
+                                <li>Useful for cafe add-ons and youth-focused menu expansion</li>
+                            </ul>
+                        </div>
+                        <div class="course-footer">
+                            <div class="course-price">₹7,499</div>
+                            <div class="course-actions"><button class="btn btn-primary enroll-btn" data-course="BOBA MILKSHAKE">Enroll Now</button></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-card course-card-customized" data-category="short workshop customized">
+                    <div class="course-content">
+                        <p class="course-tag">Private Learning</p>
+                        <h3>Customized Class — Cakes, Cookies & Brownies</h3>
+                        <p class="course-description">Choose your own menu and learn in a private or small-group format. This is ideal for focused upskilling, gifting, or special business preparation.</p>
+                        <div class="course-detail-grid">
+                            <div class="detail-card"><span>Selection</span><strong>Pick 3+ recipes</strong></div>
+                            <div class="detail-card"><span>Format</span><strong>Private / small group</strong></div>
+                            <div class="detail-card"><span>Booking</span><strong>By appointment</strong></div>
+                        </div>
+                        <div class="course-modules">
+                            <strong>How it works</strong>
+                            <ul>
+                                <li>Select a minimum of 3 recipes from the customized class menu</li>
+                                <li>Schedule a date that works for your group and learning goals</li>
+                                <li>Ingredients, printed recipes, and the items you prepare are included</li>
+                                <li>Certificates are available on request</li>
+                            </ul>
+                        </div>
+                        <p class="course-note"><strong>For bookings:</strong> Call Girija at <a href="tel:07871370663">7871370663</a> or message on <a href="https://wa.me/917871370663" target="_blank" rel="noopener">WhatsApp</a>.</p>
+                        <div class="course-footer">
+                            <div class="course-price">Fee on request</div>
+                            <div class="course-actions">
+                                <a href="pdfs/customized-class-menu.pdf" download class="btn btn-outline">Download Menu</a>
+                                <button class="btn btn-primary enroll-btn" data-course="CUSTOMIZED CLASS — Cakes, Cookies & Brownies">Book Customized Class</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Not Sure Which Course is Right for You?</h2>
-            <p>Book a trial class for just ₹499 and experience our hands-on teaching style.</p>
-            <a href="contact.html" class="btn btn-primary">Book a Trial Class</a>
+            <h2>Need help choosing the right course?</h2>
+            <p>Call +91 7871370663 and get guidance based on your level, goals, and available time.</p>
+            <a href="contact.html" class="btn btn-primary">Book a Class</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3 class="footer-logo">Angel Arts & Culinary Academy</h3>
-                    <p class="footer-tagline">Practical baking courses in Trichy. Master the art of baking with hands-on training.</p>
+                    <p class="footer-tagline">Premium baking education in Trichy with practical training, elegant finishes, and stronger course clarity.</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/angelartsacademy" target="_blank" rel="noopener" aria-label="Instagram">
-                            <span>📷</span>
-                        </a>
-                        <a href="https://www.facebook.com/angelartsacademy" target="_blank" rel="noopener" aria-label="Facebook">
-                            <span>👥</span>
-                        </a>
-                        <a href="https://www.youtube.com/@angelartsacademy" target="_blank" rel="noopener" aria-label="YouTube">
-                            <span>▶️</span>
-                        </a>
-                        <a href="https://wa.me/917871370663" target="_blank" rel="noopener" aria-label="WhatsApp">
-                            <span>💬</span>
-                        </a>
+                        <a href="https://www.instagram.com/angelartsacademy" target="_blank" rel="noopener" aria-label="Instagram"><span>📷</span></a>
+                        <a href="https://www.facebook.com/angelartsacademy" target="_blank" rel="noopener" aria-label="Facebook"><span>👥</span></a>
+                        <a href="https://www.youtube.com/@angelartsacademy" target="_blank" rel="noopener" aria-label="YouTube"><span>▶️</span></a>
+                        <a href="https://wa.me/917871370663" target="_blank" rel="noopener" aria-label="WhatsApp"><span>💬</span></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -309,7 +547,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Newsletter</h4>
-                    <p class="newsletter-text">Get 10% off your trial class when you subscribe!</p>
+                    <p class="newsletter-text">Receive new batch announcements and workshop launches.</p>
                     <form class="newsletter-form" id="newsletterForm">
                         <input type="email" placeholder="Your email" required aria-label="Email address">
                         <button type="submit" class="btn btn-primary">Subscribe</button>
@@ -323,12 +561,11 @@
         </div>
     </footer>
 
-    <!-- Enrollment Modal -->
     <div class="modal" id="enrollmentModal">
         <div class="modal-content">
             <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
             <h2>Reserve Your Seat</h2>
-            <p class="modal-subtitle">Fill in your details and we'll get back to you within 24 hours.</p>
+            <p class="modal-subtitle">Fill in your details and the academy team will get back to you within 24 hours.</p>
             <form class="enrollment-form" id="enrollmentForm">
                 <div class="form-group">
                     <label for="enrollName">Full Name *</label>
@@ -346,10 +583,21 @@
                     <label for="enrollCourse">Course Interested In *</label>
                     <select id="enrollCourse" name="course" required>
                         <option value="">Select a course</option>
-                        <option value="basic-advanced">Basic to Advanced Baking</option>
-                        <option value="professional-diploma">Professional Diploma</option>
-                        <option value="cake-decorating">Cake Decorating Workshop</option>
-                        <option value="trial">Trial Class</option>
+                        <option value="Diploma in Bakery & Confectionery (9 months)">Diploma in Bakery & Confectionery (9 months)</option>
+                        <option value="Diploma in Bakery & Confectionery (6 months)">Diploma in Bakery & Confectionery (6 months)</option>
+                        <option value="Diploma in Bakery & French Pastries (4 months)">Diploma in Bakery & French Pastries (4 months)</option>
+                        <option value="Professional Course in Bakery & Confectionery (2 months)">Professional Course in Bakery & Confectionery (2 months)</option>
+                        <option value="Professional Course in Baking (30 days)">Professional Course in Baking (30 days)</option>
+                        <option value="BASIC CAKE BAKING & FROSTING (Level 1)">BASIC CAKE BAKING & FROSTING (Level 1)</option>
+                        <option value="BASIC CAKE BAKING & FROSTING (Level 2)">BASIC CAKE BAKING & FROSTING (Level 2)</option>
+                        <option value="CAKE BAKING & FROSTING (Level 3)">CAKE BAKING & FROSTING (Level 3)</option>
+                        <option value="CAKE AND CAKE DECORATION">CAKE AND CAKE DECORATION</option>
+                        <option value="ADVANCE IN BAKING">ADVANCE IN BAKING</option>
+                        <option value="COOKIES">COOKIES</option>
+                        <option value="BREADS">BREADS</option>
+                        <option value="CHEESECAKE">CHEESECAKE</option>
+                        <option value="BOBA MILKSHAKE">BOBA MILKSHAKE</option>
+                        <option value="CUSTOMIZED CLASS — Cakes, Cookies & Brownies">CUSTOMIZED CLASS — Cakes, Cookies & Brownies</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -361,7 +609,6 @@
         </div>
     </div>
 
-    <!-- Toast Notification -->
     <div class="toast" id="toast">
         <span id="toastMessage"></span>
     </div>
@@ -369,4 +616,3 @@
     <script src="js/main.js"></script>
 </body>
 </html>
-

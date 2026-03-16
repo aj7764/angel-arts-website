@@ -435,5 +435,20 @@ dateInputs.forEach(input => {
 // fbq('init', 'FACEBOOK_PIXEL_ID');
 // fbq('track', 'PageView');
 
+// Import Google reviews helper (opens instructions)
+const importBtn = document.getElementById('importGoogleReviews');
+if (importBtn) {
+    importBtn.addEventListener('click', () => {
+        alert('To import live Google Reviews we need a Google Places API key and the Place ID for Angel Arts & Culinary Academy.\n\nIf you prefer, upload screenshots of the reviews or paste the review text and we will add them manually.\n\nReply here to provide the API key & Place ID and I can add a fetch routine that displays live reviews.');
+    });
+}
+
+const importBtnTestimonials = document.getElementById('importGoogleReviewsTestimonials');
+if (importBtnTestimonials) {
+    importBtnTestimonials.addEventListener('click', () => {
+        alert('Provide a Google Places API key & Place ID to import reviews, or upload screenshots of reviews and I will add them to the page for you.');
+    });
+}
+
 console.log('Angel Arts & Culinary Academy website loaded successfully!');
 

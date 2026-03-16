@@ -219,3 +219,14 @@ This website template is created for Angel Arts & Culinary Academy. All rights r
 
 **Built with ❤️ for Angel Arts & Culinary Academy**
 
+---
+
+## Admin: Attach Long-term Syllabus PDF & Import Google Reviews 🔧
+
+- To attach the long-term courses PDF: upload your PDF to the `pdfs/` folder and name it `long-term-courses.pdf`. The site already includes a download link at `/pdfs/long-term-courses.pdf`.
+
+- To import live Google reviews automatically: provide a Google Places API key and the Place ID for Angel Arts & Culinary Academy. Reply here or upload your API key (secret) securely and I can add the fetch code to show live reviews on the site.
+
+- If you prefer manual import: upload screenshots of Google reviews to `images/reviews/` (create the folder) or paste the review text and author's name — I will add them to `testimonials.html` for you.
+
+
