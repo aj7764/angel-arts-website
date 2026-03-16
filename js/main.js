@@ -5,7 +5,7 @@
 const siteConfig = window.ANGEL_ARTS_CONFIG || {};
 const CONTACT_EMAIL = siteConfig.contactEmail || 'angelartsandculinaryacademy@gmail.com';
 const WHATSAPP_NUMBER = siteConfig.whatsappNumber || '917871370663';
-const WEB3FORMS_ACCESS_KEY = siteConfig.web3formsAccessKey || 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
+const WEB3FORMS_ACCESS_KEY = siteConfig.web3formsAccessKey || '7c6e5b66-6ef9-4a53-9d4e-2c91ae25d6ec';
 
 // Mobile Menu Toggle
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -311,7 +311,6 @@ function buildContactLines(data) {
         `Email: ${data.email || ''}`,
         `Course: ${data.course || ''}`,
         `Preferred Date: ${data.date || ''}`,
-        `Preferred Time: ${data.time || ''}`,
         '',
         'Message:',
         data.message || ''
@@ -335,7 +334,6 @@ async function sendViaWeb3Forms(subject, data, messageLines) {
         phone: data.phone || '',
         course: data.course || '',
         preferred_date: data.date || '',
-        preferred_time: data.time || '',
         message: linesToText(messageLines),
         botcheck: '',
         replyto: data.email || CONTACT_EMAIL
