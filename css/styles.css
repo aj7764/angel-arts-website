@@ -1410,6 +1410,12 @@ section {
     margin-bottom: 1.5rem;
 }
 
+.form-action-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
@@ -1593,6 +1599,17 @@ section {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 1rem;
+}
+
+.footer-contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.footer-contact-actions .btn {
+    padding: 0.8rem 1.2rem;
 }
 
 .newsletter-form input {
@@ -2513,6 +2530,14 @@ body {
         width: 100%;
     }
 
+    .footer-contact-actions {
+        flex-direction: column;
+    }
+
+    .footer-contact-actions .btn {
+        width: 100%;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
     }
@@ -2520,6 +2545,10 @@ body {
     .modal-content {
         padding: 2rem 1.5rem;
         margin: 1rem;
+    }
+
+    .form-action-row {
+        grid-template-columns: 1fr;
     }
 
     .toast {

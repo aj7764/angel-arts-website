@@ -73,7 +73,7 @@
                             <div class="contact-icon">✉️</div>
                             <div class="contact-text">
                                 <h3>Email</h3>
-                                <p><a href="mailto:info@angelartsacademy.com">info@angelartsacademy.com</a></p>
+                                <p><a href="mailto:angelartsandculinaryacademy@gmail.com">angelartsandculinaryacademy@gmail.com</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -144,7 +144,10 @@
                             <label for="contactMessage">Message</label>
                             <textarea id="contactMessage" name="message" rows="4" placeholder="Tell us about your baking goals or ask any questions..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        <div class="form-action-row">
+                            <button type="submit" class="btn btn-primary btn-block" data-submit-mode="email">Send Enquiry</button>
+                            <button type="submit" class="btn btn-outline btn-block" data-submit-mode="whatsapp">Send on WhatsApp</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -217,12 +220,12 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <p class="newsletter-text">Get 10% off your trial class when you subscribe!</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Your email" required aria-label="Email address">
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
+                    <h4>Direct Enquiries</h4>
+                    <p class="newsletter-text">For admissions, timings, and batch details, contact the academy directly.</p>
+                    <div class="footer-contact-actions">
+                        <a href="mailto:angelartsandculinaryacademy@gmail.com" class="btn btn-outline">Email Us</a>
+                        <a href="https://wa.me/917871370663" target="_blank" rel="noopener" class="btn btn-primary">WhatsApp Us</a>
+                    </div>
                     <p class="footer-legal">FSSAI Certified • Licensed Training Center</p>
                 </div>
             </div>
@@ -237,7 +240,7 @@
         <div class="modal-content">
             <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
             <h2>Reserve Your Seat</h2>
-            <p class="modal-subtitle">Fill in your details and we'll get back to you within 24 hours.</p>
+            <p class="modal-subtitle">Fill in your details and your enquiry will open directly in your email app addressed to the academy.</p>
             <form class="enrollment-form" id="enrollmentForm">
                 <div class="form-group">
                     <label for="enrollName">Full Name *</label>
@@ -265,7 +268,10 @@
                     <label for="enrollDate">Preferred Date</label>
                     <input type="date" id="enrollDate" name="date">
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Reserve My Seat</button>
+                <div class="form-action-row">
+                    <button type="submit" class="btn btn-primary btn-block" data-submit-mode="email">Send Enquiry</button>
+                    <button type="submit" class="btn btn-outline btn-block" data-submit-mode="whatsapp">Send on WhatsApp</button>
+                </div>
             </form>
         </div>
     </div>
@@ -275,7 +281,7 @@
         <span id="toastMessage"></span>
     </div>
 
+    <script src="js/site-config.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
-

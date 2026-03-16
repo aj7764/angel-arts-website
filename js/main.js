@@ -2,6 +2,11 @@
 // Angel Arts & Culinary Academy - Main JavaScript
 // ============================================
 
+const siteConfig = window.ANGEL_ARTS_CONFIG || {};
+const CONTACT_EMAIL = siteConfig.contactEmail || 'angelartsandculinaryacademy@gmail.com';
+const WHATSAPP_NUMBER = siteConfig.whatsappNumber || '917871370663';
+const WEB3FORMS_ACCESS_KEY = siteConfig.web3formsAccessKey || 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
+
 // Mobile Menu Toggle
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const navMenu = document.getElementById('navMenu');
@@ -269,6 +274,91 @@ function showToast(message) {
     }
 }
 
+function openMailto(subject, lines) {
+    const body = lines.filter(Boolean).join('\n');
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+function openWhatsAppMessage(message) {
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank', 'noopener');
+}
+
+function buildEnrollmentLines(data) {
+    return [
+        'Hello Angel Arts Academy,',
+        '',
+        'I would like to enquire about a course.',
+        '',
+        `Name: ${data.name || ''}`,
+        `Phone: ${data.phone || ''}`,
+        `Email: ${data.email || ''}`,
+        `Course: ${data.course || ''}`,
+        `Preferred Date: ${data.date || ''}`,
+        '',
+        'Please share the next steps and batch details.'
+    ];
+}
+
+function buildContactLines(data) {
+    return [
+        'Hello Angel Arts Academy,',
+        '',
+        'I am sending an enquiry from the website.',
+        '',
+        `Name: ${data.name || ''}`,
+        `Phone: ${data.phone || ''}`,
+        `Email: ${data.email || ''}`,
+        `Course: ${data.course || ''}`,
+        `Preferred Date: ${data.date || ''}`,
+        `Preferred Time: ${data.time || ''}`,
+        '',
+        'Message:',
+        data.message || ''
+    ];
+}
+
+function linesToText(lines) {
+    return lines.filter(Boolean).join('\n');
+}
+
+function getFormMode(event) {
+    return event.submitter?.dataset?.submitMode || 'email';
+}
+
+async function sendViaWeb3Forms(subject, data, messageLines) {
+    const payload = {
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject,
+        from_name: data.name || 'Website Enquiry',
+        email: data.email || CONTACT_EMAIL,
+        phone: data.phone || '',
+        course: data.course || '',
+        preferred_date: data.date || '',
+        preferred_time: data.time || '',
+        message: linesToText(messageLines),
+        botcheck: '',
+        replyto: data.email || CONTACT_EMAIL
+    };
+
+    const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+        },
+        body: JSON.stringify(payload)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Web3Forms submission failed.');
+    }
+
+    return result;
+}
+
 // Enrollment Form Submission
 if (enrollmentForm) {
     enrollmentForm.addEventListener('submit', async (e) => {
@@ -276,34 +366,32 @@ if (enrollmentForm) {
         
         const formData = new FormData(enrollmentForm);
         const data = Object.fromEntries(formData);
-        
-        // In production, send this to your backend
-        console.log('Enrollment data:', data);
-        
-        // Simulate API call
-        setTimeout(() => {
-            showToast('Thanks! Check your inbox for booking details.');
+        const subject = `Course Enquiry - ${data.course || 'Angel Arts Academy'}`;
+        const messageLines = buildEnrollmentLines(data);
+        const submitMode = getFormMode(e);
+
+        try {
+            if (submitMode === 'whatsapp') {
+                openWhatsAppMessage(linesToText(messageLines));
+                showToast('WhatsApp is opening with your enquiry message.');
+            } else if (WEB3FORMS_ACCESS_KEY !== 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY') {
+                await sendViaWeb3Forms(subject, data, messageLines);
+                showToast('Your enquiry was sent successfully.');
+            } else {
+                openMailto(subject, messageLines);
+                showToast('Add your Web3Forms access key to enable direct form delivery. Email is opening for now.');
+            }
+
             enrollmentForm.reset();
             if (enrollmentModal) {
                 enrollmentModal.classList.remove('active');
                 document.body.style.overflow = '';
             }
-        }, 500);
-        
-        // TODO: Replace with actual API call
-        // try {
-        //     const response = await fetch('/api/enroll', {
-        //         method: 'POST',
-        //         headers: { 'Content-Type': 'application/json' },
-        //         body: JSON.stringify(data)
-        //     });
-        //     const result = await response.json();
-        //     showToast('Thanks! Check your inbox for booking details.');
-        //     enrollmentForm.reset();
-        //     enrollmentModal.classList.remove('active');
-        // } catch (error) {
-        //     showToast('Something went wrong. Please try again or call us directly.');
-        // }
+        } catch (error) {
+            console.error(error);
+            openMailto(subject, messageLines);
+            showToast('Direct form delivery failed, so your email app is opening as a fallback.');
+        }
     });
 }
 
@@ -316,29 +404,28 @@ if (contactForm) {
         
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
-        
-        // In production, send this to your backend
-        console.log('Contact data:', data);
-        
-        // Simulate API call
-        setTimeout(() => {
-            showToast('Thanks! We\'ll get back to you within 24 hours.');
+        const subject = `Website Enquiry - ${data.name || 'Angel Arts Website'}`;
+        const messageLines = buildContactLines(data);
+        const submitMode = getFormMode(e);
+
+        try {
+            if (submitMode === 'whatsapp') {
+                openWhatsAppMessage(linesToText(messageLines));
+                showToast('WhatsApp is opening with your enquiry message.');
+            } else if (WEB3FORMS_ACCESS_KEY !== 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY') {
+                await sendViaWeb3Forms(subject, data, messageLines);
+                showToast('Your enquiry was sent successfully.');
+            } else {
+                openMailto(subject, messageLines);
+                showToast('Add your Web3Forms access key to enable direct form delivery. Email is opening for now.');
+            }
+
             contactForm.reset();
-        }, 500);
-        
-        // TODO: Replace with actual API call
-        // try {
-        //     const response = await fetch('/api/contact', {
-        //         method: 'POST',
-        //         headers: { 'Content-Type': 'application/json' },
-        //         body: JSON.stringify(data)
-        //     });
-        //     const result = await response.json();
-        //     showToast('Thanks! We\'ll get back to you within 24 hours.');
-        //     contactForm.reset();
-        // } catch (error) {
-        //     showToast('Something went wrong. Please try again or call us directly.');
-        // }
+        } catch (error) {
+            console.error(error);
+            openMailto(subject, messageLines);
+            showToast('Direct form delivery failed, so your email app is opening as a fallback.');
+        }
     });
 }
 
@@ -350,29 +437,50 @@ newsletterForms.forEach(form => {
         e.preventDefault();
         
         const email = form.querySelector('input[type="email"]').value;
-        
-        // In production, send this to your email service (Mailchimp, etc.)
-        console.log('Newsletter subscription:', email);
-        
-        // Simulate API call
-        setTimeout(() => {
-            showToast('Thanks for subscribing! Check your email for the 10% discount code.');
+
+        try {
+            if (WEB3FORMS_ACCESS_KEY !== 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY') {
+                await sendViaWeb3Forms(
+                    'Website Contact Request',
+                    { name: 'Website Visitor', email },
+                    [
+                        'Hello Angel Arts Academy,',
+                        '',
+                        'Please add me to your updates or contact me back.',
+                        '',
+                        `Email: ${email}`
+                    ]
+                );
+                showToast('Your request was sent successfully.');
+            } else {
+                openMailto(
+                    'Website Contact Request',
+                    [
+                        'Hello Angel Arts Academy,',
+                        '',
+                        'Please add me to your updates or contact me back.',
+                        '',
+                        `Email: ${email}`
+                    ]
+                );
+                showToast('Add your Web3Forms access key to enable direct form delivery. Email is opening for now.');
+            }
+
             form.reset();
-        }, 500);
-        
-        // TODO: Replace with actual API call (Mailchimp, etc.)
-        // try {
-        //     const response = await fetch('/api/newsletter', {
-        //         method: 'POST',
-        //         headers: { 'Content-Type': 'application/json' },
-        //         body: JSON.stringify({ email })
-        //     });
-        //     const result = await response.json();
-        //     showToast('Thanks for subscribing! Check your email for the 10% discount code.');
-        //     form.reset();
-        // } catch (error) {
-        //     showToast('Something went wrong. Please try again.');
-        // }
+        } catch (error) {
+            console.error(error);
+            openMailto(
+                'Website Contact Request',
+                [
+                    'Hello Angel Arts Academy,',
+                    '',
+                    'Please add me to your updates or contact me back.',
+                    '',
+                    `Email: ${email}`
+                ]
+            );
+            showToast('Direct form delivery failed, so your email app is opening as a fallback.');
+        }
     });
 });
 
@@ -451,4 +559,3 @@ if (importBtnTestimonials) {
 }
 
 console.log('Angel Arts & Culinary Academy website loaded successfully!');
-
