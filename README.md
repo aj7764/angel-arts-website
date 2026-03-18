@@ -230,3 +230,4 @@ This website template is created for Angel Arts & Culinary Academy. All rights r
 - If you prefer manual import: upload screenshots of Google reviews to `images/reviews/` (create the folder) or paste the review text and author's name — I will add them to `testimonials.html` for you.
 
 
+# angel-arts-website
