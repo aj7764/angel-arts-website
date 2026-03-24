@@ -120,6 +120,7 @@ if (galleryFilterButtons.length > 0 && galleryItems.length > 0) {
 // Lightbox for Gallery
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightboxImage');
+const lightboxVideo = document.getElementById('lightboxVideo');
 const lightboxCaption = document.getElementById('lightboxCaption');
 const lightboxClose = document.getElementById('lightboxClose');
 const lightboxPrev = document.getElementById('lightboxPrev');
@@ -131,14 +132,15 @@ const galleryImages = [];
 // Collect all gallery items
 if (galleryItems.length > 0) {
     galleryItems.forEach((item) => {
-        const imageElement = item.querySelector('img');
+        const mediaElement = item.querySelector('img, video');
         const caption = item.querySelector('.gallery-caption');
 
-        if (imageElement) {
+        if (mediaElement) {
             galleryImages.push({
-                src: imageElement.getAttribute('src'),
-                alt: imageElement.getAttribute('alt') || '',
-                caption: caption ? caption.textContent.trim() : imageElement.getAttribute('alt') || '',
+                src: mediaElement.getAttribute('src'),
+                alt: mediaElement.getAttribute('alt') || mediaElement.getAttribute('aria-label') || '',
+                type: mediaElement.tagName.toLowerCase(),
+                caption: caption ? caption.textContent.trim() : mediaElement.getAttribute('alt') || mediaElement.getAttribute('aria-label') || '',
                 element: item
             });
 
@@ -164,8 +166,20 @@ function openLightbox(index) {
     const image = visibleGalleryImages[index];
     
     if (image) {
-        lightboxImage.src = image.src;
-        lightboxImage.alt = image.alt || image.caption;
+        if (image.type === 'video') {
+            lightboxImage.style.display = 'none';
+            lightboxImage.src = '';
+            lightboxVideo.style.display = 'block';
+            lightboxVideo.src = image.src;
+            lightboxVideo.setAttribute('aria-label', image.alt || image.caption);
+        } else {
+            lightboxVideo.pause();
+            lightboxVideo.style.display = 'none';
+            lightboxVideo.removeAttribute('src');
+            lightboxImage.style.display = 'block';
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt || image.caption;
+        }
         lightboxCaption.textContent = image.caption;
         lightbox.classList.add('active');
         lightbox.setAttribute('aria-hidden', 'false');
@@ -176,6 +190,11 @@ function openLightbox(index) {
 function closeLightbox() {
     lightbox.classList.remove('active');
     lightbox.setAttribute('aria-hidden', 'true');
+    if (lightboxVideo) {
+        lightboxVideo.pause();
+        lightboxVideo.style.display = 'none';
+        lightboxVideo.removeAttribute('src');
+    }
     document.body.style.overflow = '';
 }
 
