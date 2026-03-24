@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse our gallery of cakes, pastries, breads, beverages and student works from Angel Arts & Culinary Academy.">
+    <meta name="description" content="Browse our full gallery of cakes, pastries, breads, beverages, class moments and student work from Angel Arts & Culinary Academy.">
     <title>Gallery — Angel Arts & Culinary Academy</title>
 
     <link rel="stylesheet" href="css/styles.css">
@@ -13,7 +13,6 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
     <div class="container">
         <div class="nav-wrapper">
@@ -39,66 +38,232 @@
     </div>
 </nav>
 
-<!-- PAGE HEADER -->
 <section class="page-header">
     <div class="container">
         <h1>Our Gallery</h1>
-        <p>Student creations, class moments and beautiful baked art.</p>
+        <p>Explore every cake, pastry, bread, beverage and classroom highlight from Angel Arts.</p>
     </div>
 </section>
 
-<!-- GALLERY -->
 <section class="gallery-full">
     <div class="container">
-
-        <!-- CAKES -->
-        <h2 class="gallery-section-title">🎂 Cakes</h2>
-        <div class="gallery-grid-full">
-            <div class="gallery-item-full"><img src="gallery/weddingcake.jpeg" alt="Wedding Cake"></div>
-            <div class="gallery-item-full"><img src="gallery/blueweddingcake.jpeg" alt="Blue Wedding Cake"></div>
-            <div class="gallery-item-full"><img src="gallery/buttercream_cake.jpeg" alt="Buttercream Cake"></div>
-            <div class="gallery-item-full"><img src="gallery/buttercreamcake.jpeg" alt="Buttercream Cake Design"></div>
-            <div class="gallery-item-full"><img src="gallery/opera cake.jpeg" alt="Opera Cake"></div>
+        <div class="gallery-intro">
+            <p class="section-subtitle">A complete collection of our celebration work, plated desserts, bakery creations and academy moments.</p>
+            <div class="gallery-summary">
+                <span>45 photos</span>
+                <span>5 collections</span>
+                <span>Tap any image to enlarge</span>
+            </div>
         </div>
 
-        <!-- PASTRIES & DESSERTS -->
-        <h2 class="gallery-section-title">🍰 Pastries & Desserts</h2>
-        <div class="gallery-grid-full">
-            <div class="gallery-item-full"><img src="gallery/Cheesecake.jpeg" alt="Cheesecake"></div>
-            <div class="gallery-item-full"><img src="gallery/chocolate cheesecake.jpeg" alt="Chocolate Cheesecake"></div>
-            <div class="gallery-item-full"><img src="gallery/coffee_mousse.jpeg" alt="Coffee Mousse"></div>
-            <div class="gallery-item-full"><img src="gallery/lemon_mousse.jpeg" alt="Lemon Mousse"></div>
-            <div class="gallery-item-full"><img src="gallery/viral la fruit dessert.jpeg" alt="Fruit Dessert"></div>
+        <div class="gallery-filters" aria-label="Gallery categories">
+            <button class="gallery-filter-btn active" type="button" data-filter="all">All</button>
+            <button class="gallery-filter-btn" type="button" data-filter="cakes">Cakes</button>
+            <button class="gallery-filter-btn" type="button" data-filter="desserts">Desserts</button>
+            <button class="gallery-filter-btn" type="button" data-filter="breads">Breads</button>
+            <button class="gallery-filter-btn" type="button" data-filter="drinks">Drinks</button>
+            <button class="gallery-filter-btn" type="button" data-filter="academy">Academy</button>
         </div>
 
-        <!-- BREADS -->
-        <h2 class="gallery-section-title">🥐 Breads & Viennoiserie</h2>
         <div class="gallery-grid-full">
-            <div class="gallery-item-full"><img src="gallery/croissant.jpeg" alt="Croissant"></div>
-            <div class="gallery-item-full"><img src="gallery/pain_au_chocolat.jpeg" alt="Pain au Chocolat"></div>
-            <div class="gallery-item-full"><img src="gallery/custard.jpeg" alt="Custard Bun"></div>
-        </div>
+            <div class="gallery-item-full" data-category="cakes">
+                <img src="gallery/weddingcake.jpeg" alt="Elegant wedding cake display" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Wedding Cake</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="cakes">
+                <img src="gallery/blueweddingcake.jpeg" alt="Blue wedding cake design" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Blue Wedding Cake</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="cakes">
+                <img src="gallery/buttercream_cake.jpeg" alt="Buttercream cake with clean finish" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Buttercream Cake</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="cakes">
+                <img src="gallery/buttercreamcake.jpeg" alt="Buttercream cake design detail" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Buttercream Cake Design</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="cakes">
+                <img src="gallery/opera cake.jpeg" alt="Opera cake slice and finish" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Opera Cake</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="cakes">
+                <img src="gallery/Chocolate_Raspberrycake.jpeg" alt="Chocolate raspberry celebration cake" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Chocolate Raspberry Cake</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="cakes">
+                <img src="gallery/capybara.jpeg" alt="Capybara themed novelty cake" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Capybara Cake</span></div>
+            </div>
 
-        <!-- BEVERAGES -->
-        <h2 class="gallery-section-title">🧋 Beverages</h2>
-        <div class="gallery-grid-full">
-            <div class="gallery-item-full"><img src="gallery/Milkshake.jpeg" alt="Milkshake"></div>
-            <div class="gallery-item-full"><img src="gallery/pinacolada.jpeg" alt="Pina Colada"></div>
-            <div class="gallery-item-full"><img src="gallery/mango.jpeg" alt="Mango Drink"></div>
-        </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/Cheesecake.jpeg" alt="Classic cheesecake presentation" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Cheesecake</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/chocolate cheesecake.jpeg" alt="Chocolate cheesecake with glaze" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Chocolate Cheesecake</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/coffee_mousse.jpeg" alt="Coffee mousse dessert cup" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Coffee Mousse</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/lemon_mousse.jpeg" alt="Lemon mousse dessert" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Lemon Mousse</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/viral la fruit dessert.jpeg" alt="Fruit dessert plated beautifully" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Fruit Dessert</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/bonbon.jpeg" alt="Chocolate bonbon assortment" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Bonbons</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/bonbon1.jpeg" alt="Handcrafted bonbon set" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Bonbon Selection</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/bonbon3.png" alt="Decorated bonbon close-up" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Decorated Bonbons</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/bonbon4.png" alt="Artisan bonbon finishing" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Artisan Bonbons</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/choux.jpeg" alt="Choux pastry creation" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Choux Pastry</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/churro.jpeg" alt="Fresh churro dessert" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Churros</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/classic dessert.jpeg" alt="Classic plated dessert arrangement" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Classic Dessert</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/classic dessert1.jpeg" alt="Refined plated dessert presentation" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Classic Dessert Plating</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/cookie.jpg" alt="Fresh baked cookies" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Cookies</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/donut.jpeg" alt="Decorated donut selection" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Donuts</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/eclair.jpeg" alt="Eclair pastry with glaze" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Eclair</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/eclair1.jpeg" alt="Filled eclair pastry" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Eclair Variation</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="desserts">
+                <img src="gallery/eclair3.jpeg" alt="Assorted eclair assortment" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Assorted Eclairs</span></div>
+            </div>
 
-        <!-- STUDENT WORK -->
-        <h2 class="gallery-section-title">👩‍🍳 Student Works & Classes</h2>
-        <div class="gallery-grid-full">
-            <div class="gallery-item-full"><img src="gallery/studentwork1.jpeg" alt="Student Work 1"></div>
-            <div class="gallery-item-full"><img src="gallery/student work2.jpeg" alt="Student Work 2"></div>
-            <div class="gallery-item-full"><img src="gallery/capybara.jpeg" alt="Creative Cake"></div>
-        </div>
+            <div class="gallery-item-full" data-category="breads">
+                <img src="gallery/babka.jpeg" alt="Braided babka loaf" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Babka</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="breads">
+                <img src="gallery/bread.jpeg" alt="Artisan bread loaf" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Artisan Bread</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="breads">
+                <img src="gallery/bread1.jpeg" alt="Fresh bread display" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Bread Selection</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="breads">
+                <img src="gallery/bread3.jpeg" alt="Professional bread bake" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Baked Bread</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="breads">
+                <img src="gallery/bread roll.jpeg" alt="Fresh bread rolls" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Bread Rolls</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="breads">
+                <img src="gallery/croissant.jpeg" alt="Flaky croissant" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Croissant</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="breads">
+                <img src="gallery/croissant1.jpeg" alt="Golden croissant tray" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Croissant Tray</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="breads">
+                <img src="gallery/custard.jpeg" alt="Custard filled bun" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Custard Bun</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="breads">
+                <img src="gallery/pain au.jpeg" alt="Pain au chocolat variation" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Pain Au Chocolat</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="breads">
+                <img src="gallery/pain_au_chocolat.jpeg" alt="Pain au chocolat pastry" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Pain Au Chocolat Classic</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="breads">
+                <img src="gallery/pizza.jpeg" alt="Freshly baked pizza" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Pizza Bake</span></div>
+            </div>
 
+            <div class="gallery-item-full" data-category="drinks">
+                <img src="gallery/Milkshake.jpeg" alt="Milkshake served in a glass" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Milkshake</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="drinks">
+                <img src="gallery/mango.jpeg" alt="Mango beverage presentation" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Mango Drink</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="drinks">
+                <img src="gallery/pinacolada.jpeg" alt="Pina colada beverage" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Pina Colada</span></div>
+            </div>
+
+            <div class="gallery-item-full" data-category="academy">
+                <img src="gallery/founder.jpeg" alt="Founder of Angel Arts" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Founder</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="academy">
+                <img src="gallery/diploma.jpeg" alt="Diploma course showcase" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Diploma Showcase</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="academy">
+                <img src="gallery/diploma1.jpeg" alt="Diploma class presentation" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Diploma Class</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="academy">
+                <img src="gallery/classicdessert_student.jpeg" alt="Student dessert plate" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Student Dessert Work</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="academy">
+                <img src="gallery/studentwork1.jpeg" alt="Student cake project" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Student Work 1</span></div>
+            </div>
+            <div class="gallery-item-full" data-category="academy">
+                <img src="gallery/student work2.jpeg" alt="Classroom kitchen moment" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-caption">Student Work 2</span></div>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- FOOTER -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery view">&times;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#10094;</button>
+    <div class="lightbox-content">
+        <img id="lightboxImage" src="" alt="">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#10095;</button>
+</div>
+
 <footer class="footer">
     <div class="container">
         <div class="footer-bottom">

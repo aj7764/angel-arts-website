@@ -130,50 +130,64 @@ const galleryImages = [];
 
 // Collect all gallery items
 if (galleryItems.length > 0) {
-    galleryItems.forEach((item, index) => {
-        const placeholder = item.querySelector('.gallery-image-placeholder');
+    galleryItems.forEach((item) => {
+        const imageElement = item.querySelector('img');
         const caption = item.querySelector('.gallery-caption');
-        
-        if (placeholder && caption) {
+
+        if (imageElement) {
             galleryImages.push({
-                src: placeholder.textContent.trim(),
-                caption: caption.textContent.trim(),
+                src: imageElement.getAttribute('src'),
+                alt: imageElement.getAttribute('alt') || '',
+                caption: caption ? caption.textContent.trim() : imageElement.getAttribute('alt') || '',
                 element: item
             });
-            
+
             item.addEventListener('click', () => {
-                openLightbox(index);
+                const visibleGalleryImages = getVisibleGalleryImages();
+                const clickedImageIndex = visibleGalleryImages.findIndex(image => image.element === item);
+
+                if (clickedImageIndex !== -1) {
+                    openLightbox(clickedImageIndex);
+                }
             });
         }
     });
 }
 
+function getVisibleGalleryImages() {
+    return galleryImages.filter(image => image.element.style.display !== 'none');
+}
+
 function openLightbox(index) {
+    const visibleGalleryImages = getVisibleGalleryImages();
     currentImageIndex = index;
-    const image = galleryImages[index];
+    const image = visibleGalleryImages[index];
     
     if (image) {
-        // For now, we'll use placeholder text. In production, replace with actual image URLs
-        lightboxImage.src = '#'; // Replace with actual image URL
-        lightboxImage.alt = image.caption;
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt || image.caption;
         lightboxCaption.textContent = image.caption;
         lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
     }
 }
 
 function closeLightbox() {
     lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
 }
 
 function showNextImage() {
-    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    const visibleGalleryImages = getVisibleGalleryImages();
+    currentImageIndex = (currentImageIndex + 1) % visibleGalleryImages.length;
     openLightbox(currentImageIndex);
 }
 
 function showPrevImage() {
-    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    const visibleGalleryImages = getVisibleGalleryImages();
+    currentImageIndex = (currentImageIndex - 1 + visibleGalleryImages.length) % visibleGalleryImages.length;
     openLightbox(currentImageIndex);
 }
 
@@ -540,20 +554,5 @@ dateInputs.forEach(input => {
 // Initialize Facebook Pixel (replace with your pixel ID)
 // fbq('init', 'FACEBOOK_PIXEL_ID');
 // fbq('track', 'PageView');
-
-// Import Google reviews helper (opens instructions)
-const importBtn = document.getElementById('importGoogleReviews');
-if (importBtn) {
-    importBtn.addEventListener('click', () => {
-        alert('To import live Google Reviews we need a Google Places API key and the Place ID for Angel Arts & Culinary Academy.\n\nIf you prefer, upload screenshots of the reviews or paste the review text and we will add them manually.\n\nReply here to provide the API key & Place ID and I can add a fetch routine that displays live reviews.');
-    });
-}
-
-const importBtnTestimonials = document.getElementById('importGoogleReviewsTestimonials');
-if (importBtnTestimonials) {
-    importBtnTestimonials.addEventListener('click', () => {
-        alert('Provide a Google Places API key & Place ID to import reviews, or upload screenshots of reviews and I will add them to the page for you.');
-    });
-}
 
 console.log('Angel Arts & Culinary Academy website loaded successfully!');
