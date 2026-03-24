@@ -2173,7 +2173,7 @@ body {
 .page-header-luxury {
     background:
         linear-gradient(120deg, rgba(29, 22, 19, 0.85), rgba(29, 22, 19, 0.62)),
-        url('../gallery/Pastries/eclair.jpeg') center/cover no-repeat;
+        url('../gallery/Desserts/eclair.jpeg') center/cover no-repeat;
     padding: 5.5rem 0 4.5rem;
 }
 
