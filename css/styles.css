@@ -666,8 +666,10 @@ section {
 .course-image {
     position: relative;
     width: 100%;
-    height: 220px;
+    aspect-ratio: 1 / 1;
+    height: auto;
     overflow: hidden;
+    background: #f8f3ec;
 }
 
 .course-image-placeholder {
@@ -681,12 +683,12 @@ section {
 .course-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transform: scale(1.2); /* ⭐ zoom level */
+    object-fit: contain;
+    transform: scale(1);
 }
 
 .course-card:hover .course-image img {
-    transform: scale(1.05);
+    transform: scale(1);
 }
 
 
@@ -2256,16 +2258,18 @@ body {
 }
 
 .course-image {
-    height: 250px;
+    aspect-ratio: 1 / 1;
+    height: auto;
 }
 
 .course-image img {
     transform: scale(1);
     transition: transform 0.45s ease;
+    object-fit: contain;
 }
 
 .course-card:hover .course-image img {
-    transform: scale(1.06);
+    transform: scale(1);
 }
 
 .course-badge {

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=shop/index.html">
     <meta name="description" content="Order delicious cookies, cupcakes, cakes, and brownies from Angel Arts & Culinary Academy. Fresh baked goods with premium ingredients.">
     <meta name="keywords" content="cookies order Trichy, cupcakes delivery, cakes, brownies, healthy cookies, baked goods">
-    <title>Order Menu — Angel Arts & Culinary Academy</title>
+    <title>Angel Arts Shop — Angel Arts & Culinary Academy</title>
     
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,7 +109,7 @@
             border-radius: 12px;
             padding: 20px;
             transition: all 0.3s ease;
-            cursor: pointer;
+            cursor: default;
         }
 
         .menu-item:hover {
@@ -136,6 +137,58 @@
             color: #666;
             margin-bottom: 12px;
             line-height: 1.5;
+        }
+
+        .menu-item-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            background: #fff;
+            border: 1px solid var(--border-light);
+        }
+
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+            display: block;
+            background: #fff;
+        }
+
+        .menu-item-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .qty-control {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid var(--border-light);
+            border-radius: 999px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .qty-control button {
+            border: none;
+            background: transparent;
+            width: 34px;
+            height: 34px;
+            font-weight: 700;
+            color: var(--deep-cocoa);
+            cursor: pointer;
+        }
+
+        .qty-control span {
+            min-width: 28px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--deep-cocoa);
         }
 
         .minimum-order {
@@ -239,6 +292,249 @@
         .contact-info a:hover {
             text-decoration: underline;
         }
+
+        .featured-order-section {
+            margin: 40px 0;
+        }
+
+        .featured-order-section h2 {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--deep-cocoa);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .featured-order-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .featured-order-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 24px rgba(49, 31, 27, 0.08);
+            border: 1px solid var(--border-light);
+        }
+
+        .featured-order-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            background: #fff;
+            padding: 10px;
+            display: block;
+        }
+
+        .featured-order-card .featured-copy {
+            padding: 16px;
+        }
+
+        .featured-order-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            color: var(--deep-cocoa);
+        }
+
+        .featured-order-card p {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .featured-order-card button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: var(--bakers-rose);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .cart-fab {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 1100;
+            background: var(--deep-cocoa);
+            color: white;
+            border: none;
+            border-radius: 999px;
+            padding: 14px 18px;
+            box-shadow: var(--shadow-lg);
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .cart-fab span {
+            background: var(--bakers-rose);
+            margin-left: 8px;
+            border-radius: 999px;
+            padding: 2px 8px;
+        }
+
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 420px;
+            max-width: 100vw;
+            height: 100vh;
+            background: white;
+            z-index: 1200;
+            box-shadow: var(--shadow-lg);
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-drawer.active {
+            right: 0;
+        }
+
+        .cart-drawer {
+            display: flex;
+        }
+
+        .cart-header {
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-close {
+            border: none;
+            background: transparent;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--deep-cocoa);
+        }
+
+        .cart-body {
+            padding: 18px 20px;
+            overflow: auto;
+            flex: 1;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+        }
+
+        .cart-item-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .cart-item-name {
+            font-weight: 700;
+            color: var(--deep-cocoa);
+        }
+
+        .cart-item-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .cart-item-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .cart-qty {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cart-qty button {
+            border: 1px solid var(--border-light);
+            background: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .cart-footer {
+            border-top: 1px solid var(--border-light);
+            padding: 18px 20px;
+        }
+
+        .cart-empty-state {
+            background: #fff8f6;
+            border: 1px dashed var(--bakers-rose);
+            color: var(--deep-cocoa);
+            border-radius: 14px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .cart-note {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .checkout-form {
+            display: grid;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .checkout-form input,
+        .checkout-form textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            font: inherit;
+        }
+
+        .checkout-actions {
+            display: grid;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .cart-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(29, 22, 19, 0.45);
+            z-index: 1150;
+            display: none;
+        }
+
+        .cart-backdrop.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .cart-drawer {
+                width: 100%;
+            }
+            .featured-order-section h2 {
+                font-size: 1.6rem;
+            }
+            .menu-item-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .qty-control {
+                justify-content: space-between;
+            }
+        }
     </style>
 </head>
 <body>
@@ -276,16 +572,67 @@
         </div>
     </section>
 
+    <section class="featured-order-section">
+        <div class="container">
+            <h2>Featured Order Menu</h2>
+            <p class="section-subtitle">Choose from our most requested cakes, cookies, and brownies, then send the cart straight to WhatsApp.</p>
+            <div class="featured-order-grid">
+                <div class="featured-order-card">
+                    <img src="gallery/Cakes/burnt basque cheesecake.jpg" alt="Burnt Basque Cheesecake">
+                    <div class="featured-copy">
+                        <h3>Burnt Basque Cheesecake</h3>
+                        <p>Rich, creamy, and premium for celebrations.</p>
+                        <button type="button" onclick="addToCart('Burnt Basque Cheesecake', 9499)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="featured-order-card">
+                    <img src="gallery/extras/pista_kunafa_brownie.jpg" alt="Pista Kunafa Brownie">
+                    <div class="featured-copy">
+                        <h3>Pista Kunafa Brownie</h3>
+                        <p>A signature brownie with a premium finish.</p>
+                        <button type="button" onclick="addToCart('Pista Kunafa Brownie', 1999)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="featured-order-card">
+                    <img src="gallery/Cookies/orange_choco_mini_cookie.jpeg" alt="Orange Choco Mini Cookie">
+                    <div class="featured-copy">
+                        <h3>Orange Choco Mini Cookie</h3>
+                        <p>Perfect for gifting and mixed boxes.</p>
+                        <button type="button" onclick="addToCart('Orange Choco Mini Cookie Box', 750)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="featured-order-card">
+                    <img src="gallery/Cakes/cupcake.jpg" alt="Cupcake box">
+                    <div class="featured-copy">
+                        <h3>Cupcake Box</h3>
+                        <p>Mix and match flavors for parties.</p>
+                        <button type="button" onclick="addToCart('Cupcake Box', 499)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Menu Content -->
     <main class="container" style="padding: 40px 20px;">
+        <section class="order-cta-section" style="margin-top:0;">
+            <h3>🛒 Live Cart</h3>
+            <p>Add items from the menu below, adjust quantity, and place the order directly on WhatsApp.</p>
+            <div class="contact-info" style="margin-top:0;">
+                <p><strong>Cart Items:</strong> <span id="cartSummaryInline">0 items</span><br>
+                <strong>Total:</strong> <span id="cartTotalInline">₹0</span></p>
+                <p class="cart-note">Use the + and − buttons on each item to change quantity.</p>
+            </div>
+            <div id="cartPreview" class="cart-empty-state" style="margin-top:16px;">Your cart is empty. Add something sweet first.</div>
+        </section>
         
         <!-- Filter Buttons -->
         <div class="menu-filter">
-            <button class="filter-btn active" onclick="filterMenu('all')">All Items</button>
-            <button class="filter-btn" onclick="filterMenu('cookies')">Cookies</button>
-            <button class="filter-btn" onclick="filterMenu('cupcakes')">Cupcakes</button>
-            <button class="filter-btn" onclick="filterMenu('cakes')">Tier Cakes</button>
-            <button class="filter-btn" onclick="filterMenu('brownies')">Brownies</button>
+            <button class="filter-btn active" onclick="filterMenu('all', event)">All Items</button>
+            <button class="filter-btn" onclick="filterMenu('cookies', event)">Cookies</button>
+            <button class="filter-btn" onclick="filterMenu('cupcakes', event)">Cupcakes</button>
+            <button class="filter-btn" onclick="filterMenu('cakes', event)">Tier Cakes</button>
+            <button class="filter-btn" onclick="filterMenu('brownies', event)">Brownies</button>
         </div>
 
         <!-- HEALTHY COOKIES SECTION -->
@@ -295,39 +642,62 @@
                 <p class="section-subtitle">Nutritious & Delicious • Available in 1/2 kg & 1 kg orders</p>
                 <div class="menu-grid">
                     <div class="menu-item">
+                        <div class="menu-item-image"><img src="gallery/Cookies/wheat butter cookies.jpg" alt="Wheat Butter Cookies"></div>
                         <span class="category-label">Healthy</span>
                         <div class="menu-item-name">Wheat Butter Cookies</div>
                         <div class="menu-item-price">₹900/kg</div>
+                        <div class="menu-item-description">Healthy butter cookies made with wheat flour.</div>
                         <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
-                        <button class="order-btn" onclick="openOrderForm('Wheat Butter Cookies (Healthy)', 900)">Order Now</button>
+                        <div class="menu-item-actions">
+                            <div class="qty-control" aria-label="Quantity controls">
+                                <button type="button" onclick="updateCardQty('Wheat Butter Cookies (Healthy)', 900, -1)">−</button>
+                                <span id="qty-Wheat Butter Cookies (Healthy)">0</span>
+                                <button type="button" onclick="updateCardQty('Wheat Butter Cookies (Healthy)', 900, 1)">+</button>
+                            </div>
+                            <button class="order-btn" onclick="openOrderForm('Wheat Butter Cookies (Healthy)', 900)">Add to Cart</button>
+                        </div>
                     </div>
                     <div class="menu-item">
+                        <div class="menu-item-image"><img src="gallery/Cookies/coconut cookies.jpg" alt="Wheat Coconut Cookies"></div>
                         <span class="category-label">Healthy</span>
                         <div class="menu-item-name">Wheat Coconut Cookies</div>
                         <div class="menu-item-price">₹900/kg</div>
+                        <div class="menu-item-description">Light coconut cookies with a healthy wheat base.</div>
                         <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
-                        <button class="order-btn" onclick="openOrderForm('Wheat Coconut Cookies', 900)">Order Now</button>
+                        <div class="menu-item-actions">
+                            <div class="qty-control"><button type="button" onclick="updateCardQty('Wheat Coconut Cookies', 900, -1)">−</button><span id="qty-Wheat Coconut Cookies">0</span><button type="button" onclick="updateCardQty('Wheat Coconut Cookies', 900, 1)">+</button></div>
+                            <button class="order-btn" onclick="openOrderForm('Wheat Coconut Cookies', 900)">Add to Cart</button>
+                        </div>
                     </div>
                     <div class="menu-item">
                         <span class="category-label">Healthy</span>
                         <div class="menu-item-name">Wheat Short Bread Cookies</div>
                         <div class="menu-item-price">₹900/kg</div>
                         <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
-                        <button class="order-btn" onclick="openOrderForm('Wheat Short Bread Cookies', 900)">Order Now</button>
+                        <div class="menu-item-actions">
+                            <div class="qty-control"><button type="button" onclick="updateCardQty('Wheat Short Bread Cookies', 900, -1)">−</button><span id="qty-Wheat Short Bread Cookies">0</span><button type="button" onclick="updateCardQty('Wheat Short Bread Cookies', 900, 1)">+</button></div>
+                            <button class="order-btn" onclick="openOrderForm('Wheat Short Bread Cookies', 900)">Add to Cart</button>
+                        </div>
                     </div>
                     <div class="menu-item">
                         <span class="category-label">Healthy</span>
                         <div class="menu-item-name">Wheat & Ragi Ghee Rose Cookies</div>
                         <div class="menu-item-price">₹1000/kg</div>
                         <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
-                        <button class="order-btn" onclick="openOrderForm('Wheat & Ragi Ghee Rose Cookies', 1000)">Order Now</button>
+                        <div class="menu-item-actions">
+                            <div class="qty-control"><button type="button" onclick="updateCardQty('Wheat & Ragi Ghee Rose Cookies', 1000, -1)">−</button><span id="qty-Wheat & Ragi Ghee Rose Cookies">0</span><button type="button" onclick="updateCardQty('Wheat & Ragi Ghee Rose Cookies', 1000, 1)">+</button></div>
+                            <button class="order-btn" onclick="openOrderForm('Wheat & Ragi Ghee Rose Cookies', 1000)">Add to Cart</button>
+                        </div>
                     </div>
                     <div class="menu-item">
                         <span class="category-label">Healthy</span>
                         <div class="menu-item-name">Wheat Almond Cookies</div>
                         <div class="menu-item-price">₹1200/kg</div>
                         <div class="minimum-order">📦 Minimum Order: 1/2 kg</div>
-                        <button class="order-btn" onclick="openOrderForm('Wheat Almond Cookies (Healthy)', 1200)">Order Now</button>
+                        <div class="menu-item-actions">
+                            <div class="qty-control"><button type="button" onclick="updateCardQty('Wheat Almond Cookies (Healthy)', 1200, -1)">−</button><span id="qty-Wheat Almond Cookies (Healthy)">0</span><button type="button" onclick="updateCardQty('Wheat Almond Cookies (Healthy)', 1200, 1)">+</button></div>
+                            <button class="order-btn" onclick="openOrderForm('Wheat Almond Cookies (Healthy)', 1200)">Add to Cart</button>
+                        </div>
                     </div>
                     <div class="menu-item">
                         <span class="category-label">Healthy</span>
@@ -812,6 +1182,33 @@
         </div>
     </main>
 
+    <button class="cart-fab" type="button" onclick="toggleCart()">Cart <span id="cartCount">0</span></button>
+    <div class="cart-backdrop" id="cartBackdrop" onclick="toggleCart(false)"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+        <div class="cart-header">
+            <div>
+                <strong>Your Cart</strong>
+                <div class="cart-item-meta" id="cartSummary">0 items</div>
+            </div>
+            <button class="cart-close" type="button" onclick="toggleCart(false)">×</button>
+        </div>
+        <div class="cart-body" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-item-meta" id="cartTotal">Total: ₹0</div>
+            <form class="checkout-form" id="orderForm">
+                <input type="text" name="name" placeholder="Your name" required>
+                <input type="tel" name="phone" placeholder="Phone number" required>
+                <input type="text" name="pickupDate" placeholder="Pickup / delivery date">
+                <input type="text" name="address" placeholder="Delivery address or pickup note">
+                <textarea name="notes" rows="3" placeholder="Any notes, flavors, or custom instructions"></textarea>
+                <div class="checkout-actions">
+                    <button class="btn btn-primary" type="submit">Send Order on WhatsApp</button>
+                    <button class="btn btn-outline" type="button" onclick="clearCart()">Clear Cart</button>
+                </div>
+            </form>
+        </div>
+    </aside>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -876,12 +1273,58 @@
     <script src="js/site-config.js"></script>
     <script src="js/main.js"></script>
     <script>
-        function filterMenu(category) {
+        const cart = [];
+        const WHATSAPP_NUMBER = '917871370663';
+
+        function getQtyId(itemName, price) {
+            return `qty-${itemName}-${price}`.replace(/[^a-zA-Z0-9_-]/g, '-');
+        }
+
+        function enhanceMenuCards() {
+            document.querySelectorAll('.menu-item').forEach(card => {
+                const button = card.querySelector('.order-btn');
+                if (!button) return;
+                const nameNode = card.querySelector('.menu-item-name');
+                const priceNode = card.querySelector('.menu-item-price');
+                const itemName = button.dataset.itemName || nameNode?.textContent.trim() || 'Item';
+                const priceText = priceNode?.textContent.match(/\d+/g)?.join('') || button.dataset.price || '0';
+                const price = Number(priceText);
+                const qtyId = getQtyId(itemName, price);
+
+                if (!card.querySelector('.menu-item-description')) {
+                    const desc = document.createElement('div');
+                    desc.className = 'menu-item-description';
+                    desc.textContent = 'Freshly prepared and available to order.';
+                    priceNode?.insertAdjacentElement('afterend', desc);
+                }
+
+                if (card.querySelector('.qty-control')) return;
+                const actions = document.createElement('div');
+                actions.className = 'menu-item-actions';
+                actions.innerHTML = `
+                    <div class="qty-control" aria-label="Quantity controls">
+                        <button type="button" aria-label="Decrease quantity" data-action="decrease">−</button>
+                        <span id="${qtyId}">0</span>
+                        <button type="button" aria-label="Increase quantity" data-action="increase">+</button>
+                    </div>
+                    <button class="order-btn" type="button">Add to Cart</button>
+                `;
+                button.insertAdjacentElement('beforebegin', actions);
+                button.remove();
+
+                const qtyButtons = actions.querySelectorAll('.qty-control button');
+                qtyButtons[0].addEventListener('click', () => updateCardQty(itemName, price, -1));
+                qtyButtons[1].addEventListener('click', () => updateCardQty(itemName, price, 1));
+                actions.querySelector('.order-btn').addEventListener('click', () => openOrderForm(itemName, price));
+            });
+        }
+
+        function filterMenu(category, ev) {
             // Update button states
             document.querySelectorAll('.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            event.target.classList.add('active');
+            if (ev && ev.target) ev.target.classList.add('active');
 
             // Show/hide sections
             if (category === 'all') {
@@ -899,10 +1342,157 @@
             }
         }
 
-        function openOrderForm(itemName, price) {
-            // This function can be enhanced to open a modal or redirect to contact page
-            alert(`Thank you for your interest in ${itemName}!\n\nPrice: ₹${price}\n\nPlease contact us to place your order:\n📱 07871370663\n📧 angelartsandculinaryacademy@gmail.com`);
+        function addToCart(itemName, price) {
+            const existing = cart.find(item => item.name === itemName && item.price === price);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ name: itemName, price, qty: 1 });
+            }
+            renderCart();
+            toggleCart(true);
         }
+
+        function updateCardQty(itemName, price, delta) {
+            const existing = cart.find(item => item.name === itemName && item.price === price);
+            if (existing) {
+                existing.qty += delta;
+                if (existing.qty <= 0) {
+                    const index = cart.indexOf(existing);
+                    cart.splice(index, 1);
+                }
+            } else if (delta > 0) {
+                cart.push({ name: itemName, price, qty: delta });
+            }
+            renderCart();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            renderCart();
+        }
+
+        function updateQty(index, delta) {
+            const item = cart[index];
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) cart.splice(index, 1);
+            renderCart();
+        }
+
+        function clearCart() {
+            cart.length = 0;
+            renderCart();
+        }
+
+        function toggleCart(force) {
+            const drawer = document.getElementById('cartDrawer');
+            const backdrop = document.getElementById('cartBackdrop');
+            const open = typeof force === 'boolean' ? force : !drawer.classList.contains('active');
+            drawer.classList.toggle('active', open);
+            backdrop.classList.toggle('active', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        }
+
+        function renderCart() {
+            const cartItems = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            const cartSummary = document.getElementById('cartSummary');
+            const cartTotal = document.getElementById('cartTotal');
+            const cartPreview = document.getElementById('cartPreview');
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            cartCount.textContent = totalQty;
+            cartSummary.textContent = `${totalQty} item${totalQty === 1 ? '' : 's'}`;
+            cartTotal.textContent = `Total: ₹${total.toLocaleString('en-IN')}`;
+            const inlineSummary = document.getElementById('cartSummaryInline');
+            const inlineTotal = document.getElementById('cartTotalInline');
+            if (inlineSummary) inlineSummary.textContent = `${totalQty} item${totalQty === 1 ? '' : 's'}`;
+            if (inlineTotal) inlineTotal.textContent = `₹${total.toLocaleString('en-IN')}`;
+
+            cart.forEach(item => {
+                const qtyEl = document.getElementById(getQtyId(item.name, item.price));
+                if (qtyEl) qtyEl.textContent = item.qty;
+            });
+
+            if (cartPreview) {
+                cartPreview.innerHTML = cart.length
+                    ? cart.map(item => `<div><strong>${item.name}</strong> x ${item.qty} = ₹${(item.price * item.qty).toLocaleString('en-IN')}</div>`).join('')
+                    : 'Your cart is empty. Add something sweet first.';
+            }
+
+            if (!cartItems) return;
+            if (!cart.length) {
+                cartItems.innerHTML = '<div class="cart-empty-state">Your cart is empty. Add something sweet first.</div>';
+                return;
+            }
+
+            cartItems.innerHTML = cart.map((item, index) => `
+                <div class="cart-item">
+                    <div class="cart-item-top">
+                        <div>
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-meta">₹${item.price.toLocaleString('en-IN')} each</div>
+                        </div>
+                        <button type="button" class="cart-close" aria-label="Remove item" onclick="removeFromCart(${index})">×</button>
+                    </div>
+                    <div class="cart-item-actions">
+                        <div class="cart-qty">
+                            <button type="button" onclick="updateQty(${index}, -1)">−</button>
+                            <strong>${item.qty}</strong>
+                            <button type="button" onclick="updateQty(${index}, 1)">+</button>
+                        </div>
+                        <strong>₹${(item.price * item.qty).toLocaleString('en-IN')}</strong>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openOrderForm(itemName, price) {
+            addToCart(itemName, price);
+        }
+
+        function buildCartMessage(data) {
+            const lines = [
+                'Hello Angel Arts Academy,',
+                '',
+                'I would like to place an order.',
+                '',
+                `Name: ${data.name || ''}`,
+                `Phone: ${data.phone || ''}`,
+                `Pickup/Delivery Date: ${data.pickupDate || ''}`,
+                `Address/Note: ${data.address || ''}`,
+                '',
+                'Order items:'
+            ];
+            cart.forEach(item => {
+                lines.push(`- ${item.name} x ${item.qty} = ₹${(item.price * item.qty).toLocaleString('en-IN')}`);
+            });
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            lines.push('', `Total: ₹${total.toLocaleString('en-IN')}`);
+            if (data.notes) {
+                lines.push('', 'Notes:', data.notes);
+            }
+            lines.push('', 'Please confirm the order and share the next steps.');
+            return lines.join('\n');
+        }
+
+        enhanceMenuCards();
+        renderCart();
+
+        document.getElementById('orderForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!cart.length) {
+                alert('Please add at least one item to your cart first.');
+                return;
+            }
+            const formData = new FormData(e.currentTarget);
+            const data = Object.fromEntries(formData);
+            const message = buildCartMessage(data);
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank', 'noopener');
+        });
     </script>
 </body>
 </html>
