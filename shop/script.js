@@ -1,23 +1,15 @@
 const orderNumber='917871370663',cart=[];
 const groups=[
-['🌾 Healthy Cookies (No Maida, No White Sugar)','healthy','Orders taken at Angel Arts & Craft Academy • Details for 1 kg',['Wheat Butter Cookies|900','Wheat Coconut Cookies|900','Wheat Short Bread Cookies|900','Wheat & Ragi Ghee Rose Cookies|1000','Wheat Almond Cookies|1200','Multi Grain Curry Leaf Cookies|1000','Multi Grain Masala Cookies|1000','Wheat Florentine Cookies|2500','Wheat Ragi Cookies|1100','Wheat Choco Chip Cookies|1600','Wheat Orange Chocolate Cookies|1500','Wheat Almond Oats Cookies|1300']],
-['🍪 Cookies','cookies','Orders taken at Angel Arts & Craft Academy • Minimum order: 1 kg',['Wheat Butter Cookies|900','Maida Butter Cookies|900','Coconut Cookies|900','Pista Cookies|1000','Wheat Short Bread|900','Maida Short Bread|900','Ghee Rose Cookies|1000','Nan-Khatai Cookies|1200','Ghee Cookies|1000','Wheat Almond Cookies|1200','Maida Almond Cookies|1200','Curry Leaf Cookies|1000','Masala Cookies|1000']],
-['🎂 Classic Cakes','cakes','Classic cakes • Price per kg',['Black Forest|1500','White Forest|1300','Butterscotch Fresh Cream|1500','German Forest|1800','Seasonal Fresh Fruit Cake|2599','Rasmalai Cake|1800','Rosemilk Cake|1800','Pig Pickin Cake (Pineapple & Orange Compote)|1700','Pina Colada Cake (Pineapple & Coconut)|1800']],
-['🍫 Premium Cakes','premium-cakes','Premium cakes • Price per kg',['Belgian Chocolate Truffle|2999','Dark Chocolate Truffle|2999','Milk Chocolate Caramel|3199','Belgian Dark Chocolate Caramel|3299','German Mocha|2999','Lotus Biscoff Cake|2500','Belgian Chocolate Cake|3199','Gianduja (Milk Chocolate & Hazelnut)|3799','Authentic Original Black Forest|2299','London Viral Chocolate Caramel Cake|3299','Chocolate Berry Cake|3499','Dubai Chocolate Kunafa Cake|3899','Chocolate Raspberry Cake|3899']],
-['🧈 Buttercream Cakes','buttercream-cakes','Buttercream cakes • Price per kg',['Swiss Meringue Buttercream Vanilla|2500','Swiss Meringue Buttercream Lotus Biscoff|3200','Italian Meringue Buttercream Butterscotch|2500']],
-['🍰 Layered Cakes','layered-cakes','Layered cakes • Price per kg',['Authentic Black Forest Layer Cake|2599','Chocolate Layer Cake|2999','Blueberry Layer Cake|2799','Strawberry Layer Cake|2799','Belgian Chocolate Layer Cake|3299','Chocolate Caramel Layer Cake|3199']],
-['✨ Entremets','entremet','French-style mousse cakes • Price per kg',['Pineapple Almond Entremet|3299','Salted Caramel Dark Chocolate Entremet|3699','Strawberry Pistachio Entremet|3799']],
-['⭐ Signature Cakes','signature-cakes','Signature cakes • Price per item',['Opera (500g)|2500','8-Layer Chocolate Cake (500g)|2999','Original Premium Tiramisu|3299','Tiramisu Cake|1899']],
-['🍰 Dry Cakes (Travel Cakes)','custom','Customized cakes, cookies & brownies menu • Price per kg',['Vanilla Butter Cake|700','Commercial Tea Cake|700','Pudding Cake|800','Dates Cake|750','Plum Cake|850','Banana Cake|800','Honey Cake|800','Ghee Cake|1200','Carrot Cake with Cream Cheese|1200']],
-['✨ Cake & Cake Decoration','custom','Customized cakes menu • Price per kg',['Black Forest|1550','White Forest|1250','Milk Chocolate Bounty Cake|2500','Ferrero Rocher Cake|2500','Seasonal Fresh Fruit Cake with Fruit Compote|2250','Caramel Cake with Swiss Meringue Butter Cream|2500','Mousse Cake (Triple Chocolate)|3000','Dream Cake|2500','Tiramisu|4500','German Black Forest|2000','Rose Milk Cake|1500','Truffle Cake|2500','Belgium Truffle Cake|3500','Butterscotch Cake|2000','Rasamalai Cake|2000','Caramel Cake|1750','Classic Tresleches Cake|2200','Rosemilk Tresleches Cake|2200','Malted Milk Tresleches (Boost / Milo)|2200','Iced Latte Tresleches|2200','Tender Coconut Tresleches|2300','Baked New York Cheesecake|1999','Baked Biscoff Cheesecake|2499','Eggless Baked Gulab Jamun Cheesecake with Rabdi Sauce|2999']],
-['🍫 Brownies & Blondies','brownies','Customized menu • Price per kg',['Eggless Brownie|1550','Fudge Brownie|1500','Nutella White Chocolate Blondie|1600','Gluten Free Brownie with Chocolate Cremeux & Whipped Coffee Cream|2500','Oreo Brownie|1550']],
-['🍪 Customized Cookies','custom','Customized menu • Price per kg',['Butter Cookies|500','Piped Butter Cookies|600','Wheat Salt Cookies|500','Jam Cookies|500','Multi Grain Cookies|500','Short Bread Cookies|600','Coconut Cookies|500','Choco Chip Cookies (Egg)|750','Choco Chip Cookies (Eggless)|750','Espresso Choc Chip Cookie (Eggless)|750','Peanut Choco Chip Cookies (Egg)|850','Fudge Double Chocolate Cookies (Egg)|900','Danish Cookies|800','Cashew Cookies|700','Checker Board Cookies|1000','Ghee Cookies|750','Osmania Cookies|800','Orange Chocolate Cookies|900','Masala Cookies|700','Italian Herb Cookie|600','Nan-Khatai|750','Florentine Cookies|1500']],
-['🌾 Millet Cakes (No Maida, No White Sugar)','custom','Customized menu • Price per kg',['Eggless Wheat Muffins|700','Wheat Pudding Cake|900','Wheat Banana Cake|850','Wheat Dates & Nuts Cake|800','Wheat Plum Cake|900','Wheat Chocolate Cupcake with Chocolate Ganache Icing|1500','Black Forest|1600','German Black Forest|2000','White Forest|1400','Seasonal Cake with Fruit Compote (Mango / Strawberry)|2500','Belgium Truffle Cake|3500','Mousse Cake|3000']],
-['🌾 Millet Brownies (No Maida, No White Sugar)','brownies','Customized menu • Price per kg',['Eggless Wheat Brownie|1500','Wheat Brownie|1600','Karuppu Kavuni Brownie|1600','Ragi Brownie|1500','Kambu (Bajra) Brownie|1500','Gluten Free Brownie with Chocolate Cremeux & Whipped Coffee Cream|3000']],
-['🌾 Millet Cookies (No Maida, No White Sugar, No Eggs)','custom','Customized menu • Price per kg',['Wheat Salt Cookies|500','Classic Butter Cookies|700','Wheat Short Bread Cookies|600','Wheat Choco Chip Cookies|750','Wheat Danish Cookies|800','Wheat Masala Cookies|700','Wheat Ghee Cookies|750','Oats Wheat Cashew Cookies|600','Multi Grain Cookies|600','Ragi Cookies|600','Ragi Chocolate Cookies|700','Spicy Bangalore Cookies|800','Coconut Cinnamon Cookies|700','Digestive Cookies|700','Nan Khatai|700','Granola Cookie Stick|900','Wheat Chocolate Orange Cookies|900','Jowar Cookies|600','Florentine Cookies|1500','Biotin Cookies|1500','Almond & Coconut Nutri Bar|1500']],
-['🍩 Special Creations','custom','Customized menu • Price per kg',['Berliner / Bomboloni / Doughnut with Diplomat Cream|2500','Korean Cream Cheese Bun|2000','Jiggy Chocolate & Vanilla Pannacotta (Capybara & Cat)|2500']]
+['🎂 Cakes','cakes','Price per kg',['Black Forest|1400','White Forest|1300','German Forest|1500','Butterscotch Cake|1500','Rasmalai Cake|1650','Rosemilk Cake|1600','Pig Pickin (Pineapple & Orange)|1700','Pina Colada (Pineapple & Coconut)|1700','Caramel Cake|1500','Ferrero Rocher Cake|1800','Biscoff Cake|1800','Gulab Jamun Cake|1500']],
+['🍫 Premium Cakes','premium-cakes','Price per kg',['Seasonal Fresh Fruit|2400','Milk Bounty Chocolate Bounty Cake|2300','Butterscotch Cake with Italian Meringue Buttercream|2200','Belgium Dark Chocolate Truffle Cake|3000','Vanilla Cake with Butter Icing|2000','Vanilla Cake with Swiss Meringue Buttercream|2000','Belgium Milk Chocolate Caramel Cake|3200','Belgium Salted Caramel Milk Chocolate Cake|3200','Belgium Dark Chocolate Caramel Cake|3100','Belgium Dark German Mocha Cake (Coffee & Chocolate - Dark/Milk)|3100','Gianduja (Milk Chocolate Hazelnut)|3600','Tiramisu Cake|2600','Opera Cake (500 gms)|2500','Authentic Original Black Forest|2600','London Viral Chocolate Caramel Cake (500 gms)|3300','Belgium Milk Chocolate Raspberry Cake|4000','German Milk Chocolate Mocha Cake (Coffee & Chocolate)|3200','Belgium Milk Chocolate Strawberry Cake|3800','Belgium Milk Chocolate Orange Cake|3700','Carrot Walnut Cake with Cream Cheese Butter Icing|2800','OG Tiramisu|3200','Tender Coconut Tres Leches Cake|2600','Pistachio Rosemilk Tres Leches Cake|2800','Malted Milk Tres Leches Cake (Milo / Boost)|2500','Salted Caramel Buttercream Cake|2400','Dubai Choco Pistachio Kunafa Cake|4000']],
+['🍰 Layered Cakes','layered-cakes','Minimum 1.5 kg',['Mango Coconut Cake|3300','Chocolate Cheese Layered Cake|3500','Chocolate Berry Cheese Layered Cake|3800','Blueberry Lemon Cake|3600']],
+['✨ Entremets','entremet','Price per kg',['Pineapple Almond|3999','Salted Caramel Dark Chocolate|4200']],
+['⭐ Signature Cakes','signature-cakes','Price per kg',['Tender Coconut Tresleches Cake|2600','Malted Milk Tresleches Cake (Milo / Boost)|2500','Dubai Choco Pistachio Kunafa Cake|4000']],
+['🧁 Cupcakes','cupcakes','Price per piece',['Vanilla Butter Cupcake (Plain)|80','Vanilla Butter Cupcake with Butter Icing|90','Chocolate Cupcake with Choco Butter Icing|140','Chocolate Cupcake with Ganache Frosting|140','Chocolate Caramel Cupcake with Caramel Ganache|150','Carrot Cupcake with Cream Cheese Icing / Frosting|90','Vanilla Cupcake with Blueberry Buttercream|110','Banana Cupcake with Cream Cheese Frosting|90','Vanilla Cupcake with Butterscotch Icing|100','Blueberry Lemon Cupcake with Buttercream Frosting|120']],
+['🍰 Dry Cakes','dry-cakes','Price per kg',['Vanilla Butter Cake|1000','Choco Vanilla Marble Cake|1100','Dates & Cashew Cake|1200','Rich Plum Cake|1300','Ghee Cake (500 g)|900','Pudding Cake (500 g)|650','Banana Cake (500 g)|450']],
+['🧁 Muffins','muffins','Price per piece',['Vanilla Muffin|49','Eggless Muffin|40']],
+['🍪 Cookies (250g)','cookies-250g','250 g packs',['Wheat Salt Cookie|295','Shortbread|310','Coconut Cookie|300','Danish Cookie|300','Chocochip Cookie|425','Ghee Cookie|499','Masala Curry Cookie|365','Nankhatai|475','Karuppu Kavuni Cookie|425','Wheat Shortbread|320','Butter Cookie|335','Ragi Cookies|365','Bangalore Cookie (Masala)|475','Digestive Biscuits|475','Granola Cookie Sticks|499','Jowar Cookie|450','Biotin Cookie|699','Florentine Cookie|865']]
 ];
-groups.push(['🥣 Granola & Muesli','custom','Wholesome, made-to-order bakery favourites • Price per kg',['Granola Cookie Stick|900','Almond & Coconut Nutri Bar|1500']]);
 const galleryRoot='../gallery/';
 const productImageByName = {
   'Wheat Butter Cookies': '../gallery/Cookies/butter cookie.jpg',
@@ -44,6 +36,104 @@ const productImageByName = {
   'Maida Almond Cookies': '../gallery/Cookies/butter cookie.jpg',
   'Curry Leaf Cookies': '../gallery/extras/herb cookie.jpg',
   'Masala Cookies': '../gallery/extras/jeera cookie.jpg',
+  'Black Forest': '../gallery/extras/blackforest cake.png',
+  'White Forest': '../gallery/Cakes/white forest3.jpeg',
+  'German Forest': '../gallery/extras/german forest cake.jpg',
+  'Butterscotch Cake': '../gallery/extras/butterscotch cake.JPG',
+  'Rasmalai Cake': '../gallery/Cakes/gulab juman cheesecake.jpg',
+  'Rosemilk Cake': '../gallery/extras/rose milk cake.jpg',
+  'Pig Pickin (Pineapple & Orange)': '../gallery/Cakes/berry overload cake.jpg',
+  'Pina Colada (Pineapple & Coconut)': '../gallery/Cakes/tender coconut tres leches cake.jpg',
+  'Caramel Cake': '../gallery/extras/caramel cake.PNG',
+  'Ferrero Rocher Cake': '../gallery/extras/ferraro cake.jpg',
+  'Biscoff Cake': '../gallery/Cakes/biscoff cake.jpg',
+  'Gulab Jamun Cake': '../gallery/Cakes/gulab juman cheesecake.jpg',
+  'Seasonal Fresh Fruit Cake': '../gallery/Cakes/berry overload cake.jpg',
+  'Milk Chocolate Bounty Cake': '../gallery/extras/chocolate cake.jpg',
+  'Butterscotch Cake with Italian Meringue Butter Cream': '../gallery/extras/butter scotch cake 2.jpg',
+  'Butterscotch Cake with Italian Meringue Buttercream': '../gallery/extras/butter scotch cake 2.jpg',
+  'Belgium Dark Chocolate Truffle Cake': '../gallery/extras/dark_chocolate truffle cake.jpg',
+  'Belgium Milk Chocolate Caramel Cake': '../gallery/extras/chocolate caramel cake.jpg',
+  'Belgium Salted Caramel Milk Chocolate Cake': '../gallery/extras/dark chocolate salted caramel entremet.jpg',
+  'Belgium Dark Chocolate Caramel Cake': '../gallery/extras/chocolate caramel cake.jpg',
+  'Belgium Dark German Mocha Cake (Coffee & Chocolate - Dark/Milk)': '../gallery/Cakes/chocolate cake.jpg',
+  'Seasonal Fresh Fruit': '../gallery/extras/berry overload cake.jpg',
+  'Milk Bounty Chocolate Bounty Cake': '../gallery/extras/chocolate cake.jpg',
+  'Belgium Milk Chocolate Raspberry Cake': '../gallery/extras/Chocolate_Raspberrycake.jpeg',
+  'German Milk Chocolate Mocha Cake (Coffee & Chocolate)': '../gallery/Cakes/chocolate cake.jpg',
+  'Belgium Milk Chocolate Strawberry Cake': '../gallery/extras/raspberry:strawberry cheese chocolate layered cake.jpg',
+  'Belgium Milk Chocolate Orange Cake': '../gallery/extras/berry overload cake.jpg',
+  'Carrot Walnut Cake with Cream Cheese Butter Icing': '../gallery/Cakes/buttercreamcake.jpeg',
+  'OG Tiramisu': '../gallery/extras/tiramisu1.jpg',
+  'Pistachio Rosemilk Tres Leches Cake': '../gallery/Cakes/rose milk cake.jpg',
+  'Salted Caramel Buttercream Cake': '../gallery/extras/caramel cake.PNG',
+  'Dubai Choco Pistachio Kunafa Cake': '../gallery/extras/chocolate kunafa cake.jpg',
+  'Dark Chocolate Truffle Cake': '../gallery/extras/dark_chocolate truffle cake.jpg',
+  'Vanilla Cake with Butter Icing': '../gallery/Cakes/vanilla butter cake with butter icing.jpg',
+  'Vanilla Cake with Swiss Meringue Butter Cream': '../gallery/Cakes/swiss meringue butter cream cake.jpg',
+  'Milk Chocolate Caramel Cake': '../gallery/extras/chocolate caramel cake.jpg',
+  'Salted Caramel Milk Chocolate Cake': '../gallery/extras/chocolate caramel cake.jpg',
+  'Dark Chocolate Caramel Cake': '../gallery/extras/chocolate cake.jpg',
+  'German Mocha Cake (Coffee & Chocolate)': '../gallery/Cakes/chocolate cake.jpg',
+  'Gianduja (Milk Chocolate Hazelnut)': '../gallery/Cakes/chocolate hazelnut cake.jpg',
+  'Tiramisu Cake': '../gallery/extras/tiramisu.jpg',
+  'Opera Cake': '../gallery/Pastries/opera cake.jpeg',
+  'Authentic Original Black Forest': '../gallery/extras/blackforest cake.png',
+  'Belgian Viral Chocolate Caramel Cake': '../gallery/extras/chocolate caramel cake.jpg',
+  'Milk Chocolate Raspberry Cake': '../gallery/Cakes/Chocolate_Raspberrycake.jpeg',
+  'Oreo M Tiramisu': '../gallery/extras/tiramisu.jpg',
+  'Belgian Milk Chocolate Mocha Cake (Coffee & Chocolate)': '../gallery/Cakes/chocolate cake.jpg',
+  'Belgian Milk Chocolate Strawberry Cake': '../gallery/Cakes/raspberry:strawberry cheese chocolate layered cake.jpg',
+  'Belgian Milk Chocolate Orange Cake': '../gallery/Cakes/berry overload cake.jpg',
+  'Dark Chocolate Belgium Cheesecake Butter Icing': '../gallery/Cakes/buttercreamcake.jpeg',
+  'Mango Coconut Cake': '../gallery/extras/tender coconut tres leches cake.jpg',
+  'Chocolate Cheese Layered Cake': '../gallery/extras/chocolate_cheese_layeredcake.jpg',
+  'Chocolate Berry Cheese Layered Cake': '../gallery/Cakes/raspberry:strawberry cheese chocolate layered cake.jpg',
+  'Blueberry Lemon Cake': '../gallery/Cakes/lemon blueberry layeredcake.jpg',
+  'Pineapple Almond': '../gallery/Cakes/pineapple almond entremet1.jpg',
+  'Salted Caramel Dark Chocolate': '../gallery/extras/dark chocolate salted caramel entremet.jpg',
+  'Tender Coconut Tresleches Cake': '../gallery/Cakes/tender coconut tres leches cake.jpg',
+  'Pistachio Tresleches Cake': '../gallery/extras/pista_kunafa_brownie.jpg',
+  'Malted Milk Tresleches Cake (Milo / Boost)': '../gallery/Cakes/chocolate cake.jpg',
+  'Dubai Choco Pistachio Kunafa Cake': '../gallery/extras/chocolate kunafa cake.jpg',
+  'Vanilla Butter Cupcake with Butter Icing': '../gallery/Cakes/vanilla butter cake with butter icing.jpg',
+  'Chocolate Cupcake with Choco Butter Icing': '../gallery/Cakes/chocolate cupcake.JPG',
+  'Chocolate Cupcake with Ganache Frosting': '../gallery/Cakes/chocolate cupcake.JPG',
+  'Chocolate Caramel Cupcake with Banana Icing': '../gallery/extras/chocolate caramel cake.jpg',
+  'Carrot Cupcake with Cream Cheese Frosting': '../gallery/Cakes/buttercreamcake.jpeg',
+  'Vanilla Cupcake with Blueberry Buttercream': '../gallery/extras/blueberry cake.jpg',
+  'Banana Cupcake with Cream Cheese Frosting': '../gallery/Cakes/plum cake.jpg',
+  'Vanilla Cupcake with Butterscotch Icing': '../gallery/extras/butterscotch cake.JPG',
+  'Blueberry Lemon Cupcake with Buttercream Frosting': '../gallery/Cakes/blueberry cake.jpg',
+  'Vanilla Butter Cake (500g)': '../gallery/Cakes/vanilla butter cake with butter icing.jpg',
+  'Chocolate Vanilla Marble Cake': '../gallery/Cakes/plum cake.jpg',
+  'Dates & Cashew Cake': '../gallery/Cakes/plum cake.jpg',
+  'Rich Plum Cake': '../gallery/Cakes/plum cake.jpg',
+  'Ghee Cake (500g)': '../gallery/Cakes/plum cake.jpg',
+  'Pudding Cake (500g)': '../gallery/Cakes/plum cake.jpg',
+  'Banana Cake (500g)': '../gallery/Cakes/plum cake.jpg',
+  'Vanilla Muffin': '../gallery/Cakes/plum cake.jpg',
+  'Dates & Cashew Muffin': '../gallery/Cakes/plum cake.jpg',
+  'Banana Muffin': '../gallery/Cakes/plum cake.jpg',
+  'Eggless Muffin': '../gallery/Cakes/plum cake.jpg',
+  'Wheat Salt Cookie': '../gallery/Cookies/wheat salt cookie.png',
+  'Short Bread': '../gallery/Cookies/shortbread.png',
+  'Coconut Cookie': '../gallery/Cookies/coconut cookie.jpg',
+  'Danish Cookie': '../gallery/Cookies/nan khatai.png',
+  'Chocochip Cookie': '../gallery/Cookies/chocochip cookie.png',
+  'Ghee Cookie': '../gallery/Cookies/ghee rose cookie.png',
+  'Masala Cookie': '../gallery/Cookies/masala cookie.png',
+  'Nan-Khatai': '../gallery/Cookies/nan khatai.png',
+  'Karuppu Kavuni Cookie': '../gallery/Cookies/karuppu kavuni cookie.png',
+  'Wheat Short Bread': '../gallery/Cookies/shortbread.png',
+  'Butter Cookie': '../gallery/Cookies/butter cookie.jpg',
+  'Ragi Cookies': '../gallery/Cookies/ragi cookie.jpg',
+  'Bangalore Cookie (Masala)': '../gallery/Cookies/masala cookie.png',
+  'Digestive Biscuits': '../gallery/Cookies/digestive biscuits.png',
+  'Granola Cookie Sticks': '../gallery/Cookies/granola cookie stick.png',
+  'Jowar Cookie': '../gallery/Cookies/cookie.jpg',
+  'Protein Cookie': '../gallery/Cookies/biotin cookie.jpg',
+  'Florentine Cookie': '../gallery/extras/florentine.jpeg',
   'Black Forest': '../gallery/extras/blackforest cake.png',
   'White Forest': '../gallery/Cakes/white forest3.jpeg',
   'Butterscotch Fresh Cream': '../gallery/extras/butterscotch cake.JPG',
@@ -236,15 +326,17 @@ const resolvePhoto=(name,category,index)=>{
   const list=categoryFallbacks[category]||['Cakes/buttercream_cake.jpeg'];
   return `${galleryRoot}${list[index % list.length]}`;
 };
-const menu=document.querySelector('.menu-wrap'),shopCategories=['healthy-cookies','cookies','cakes','premium-cakes','buttercream-cakes','layered-cakes','entremet','signature-cakes','dry-cakes','brownie','cookies','millet-bakes','brownie','millet-cookies','entremet','granola-muesli'];document.querySelectorAll('.product-section').forEach(s=>s.remove());
-groups.forEach(([title,category,note,items],groupIndex)=>{const section=document.createElement('section');section.className='product-section';section.dataset.category=shopCategories[groupIndex];const cards=items.map((item,index)=>{const[name,price]=item.split('|'),photo=resolvePhoto(name,shopCategories[groupIndex],index);return `<article class="product"><img src="${photo}" alt="${name}" loading="lazy" style="width:calc(100% + 42px);height:175px;object-fit:cover;margin:-21px -21px 18px;border-radius:10px 10px 0 0;display:block"><span>${section.dataset.category.replace('-',' ')}</span><h4>${name}</h4><b>₹${price}${name.includes('(500g)')?'':'/kg'}</b><p>${note}</p><button data-product="${name.replace(/"/g,'&quot;')}" data-price="₹${price}${name.includes('(500g)')?'':'/kg'}">Add to cart +</button></article>`}).join('');section.innerHTML=`<div class="section-title"><p>${section.dataset.category.replace('-',' ').toUpperCase()}</p><h3>${title}</h3><span>${note}</span></div><div class="product-grid">${cards}</div>`;menu.append(section)});
+const menu=document.querySelector('.menu-wrap');document.querySelectorAll('.product-section').forEach(s=>s.remove());
+const unitSuffixByCategory={cakes:'/kg','premium-cakes':'/kg','layered-cakes':'/kg','entremet':'/kg','signature-cakes':'/kg','cupcakes':'/piece','muffins':'/piece','dry-cakes':'/kg','cookies-250g':''};
+const fixedWeightPattern=/\(\d+\s*g\)/i;
+groups.forEach(([title,category,note,items])=>{const section=document.createElement('section');section.className='product-section';section.dataset.category=category;const cards=items.map((item,index)=>{const[name,price]=item.split('|'),photo=resolvePhoto(name,category,index),unit=category==='cookies-250g'?' / 250g':((category==='dry-cakes'&&/\(500\s*g\)/i.test(name))?' / 500 g':(unitSuffixByCategory[category]??(fixedWeightPattern.test(items[0]||'')?'':'/kg'))),itemNote=category==='dry-cakes'&&/\(500\s*g\)/i.test(name)?'500 g pack':note;return `<article class="product"><img src="${photo}" alt="${name}" loading="lazy" style="width:calc(100% + 42px);height:175px;object-fit:cover;margin:-21px -21px 18px;border-radius:10px 10px 0 0;display:block"><span>${section.dataset.category.replace('-',' ')}</span><h4>${name}</h4><b>₹${price}${unit}</b><p>${itemNote}</p><button data-product="${name.replace(/"/g,'&quot;')}" data-price="₹${price}${unit}">Add to cart +</button></article>`}).join('');section.innerHTML=`<div class="section-title"><p>${section.dataset.category.replace('-',' ').toUpperCase()}</p><h3>${title}</h3><span>${note}</span></div><div class="product-grid">${cards}</div>`;menu.append(section)});
 const sections=document.querySelectorAll('.product-section'),filterBar=document.querySelector('.filters');filterBar.style.display='none';
-const shopLabels=[['all','All products'],['cakes','Classic cakes'],['premium-cakes','Premium cakes'],['buttercream-cakes','Buttercream cakes'],['layered-cakes','Layered cakes'],['entremet','Entremet'],['signature-cakes','Signature cakes'],['cookies','Cookies'],['granola-muesli','Granola & muesli'],['millet-bakes','Millet bakes'],['millet-cookies','Millet cookies'],['brownie','Brownie'],['dry-cakes','Travel cakes (dry cakes)'],['healthy-cookies','Healthy cookies']],categoryOrder=['cakes','premium-cakes','buttercream-cakes','layered-cakes','entremet','signature-cakes','dry-cakes','cookies','granola-muesli','millet-bakes','millet-cookies','brownie','healthy-cookies'],categoryRank=Object.fromEntries(categoryOrder.map((key,index)=>[key,index]));
+const shopLabels=[['all','All products'],['cakes','Cakes'],['premium-cakes','Premium cakes'],['layered-cakes','Layered cakes'],['entremet','Entremets'],['signature-cakes','Signature cakes'],['cupcakes','Cupcakes'],['dry-cakes','Dry cakes'],['muffins','Muffins'],['cookies-250g','Cookies (250g)']],categoryOrder=['cakes','premium-cakes','layered-cakes','entremet','signature-cakes','cupcakes','dry-cakes','muffins','cookies-250g'],categoryRank=Object.fromEntries(categoryOrder.map((key,index)=>[key,index]));
 const shopLayout=document.createElement('div');shopLayout.className='shop-layout';const sidebar=document.createElement('aside');sidebar.className='shop-sidebar';sidebar.innerHTML=`<p>SHOP</p>${shopLabels.map(([key,label],i)=>`<button class="shop-filter ${i===0?'active':''}" data-category="${key}">${label}<span>→</span></button>`).join('')}`;const catalogue=document.createElement('div');catalogue.className='catalogue';[...sections].sort((a,b)=>(categoryRank[a.dataset.category]??999)-(categoryRank[b.dataset.category]??999)).forEach(section=>catalogue.append(section));shopLayout.append(sidebar,catalogue);menu.append(shopLayout);
 document.querySelectorAll('.shop-filter').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.shop-filter').forEach(item=>item.classList.remove('active'));button.classList.add('active');const selected=button.dataset.category;sections.forEach(section=>section.hidden=selected!=='all'&&section.dataset.category!==selected);window.scrollTo({top:shopLayout.offsetTop-105,behavior:'smooth'})}));
 const cartPanel=document.getElementById('cart'),overlay=document.getElementById('cartOverlay'),cartItems=document.getElementById('cartItems'),cartCount=document.getElementById('cartCount'),sendOrder=document.getElementById('sendOrder');
 function setCart(open){cartPanel.classList.toggle('open',open);overlay.classList.toggle('show',open);cartPanel.setAttribute('aria-hidden',String(!open))}
-const defaultSize=name=>name.includes('(500g)')?'500 g':'1 kg';
+const defaultSize=name=>{const match=name.match(/\((\d+)\s*g\)/i);return match?`${match[1]} g`:'1 kg';};
 const weightInKg=size=>{const match=size.match(/([\d.]+)\s*(kg|g)/i);return match?(match[2].toLowerCase()==='g'?Number(match[1])/1000:Number(match[1])):1};
 const money=value=>`₹${Math.round(value).toLocaleString('en-IN')}`;
 const unitPrice=item=>Number(item.price.replace(/[^\d.]/g,''))*(item.perKg?weightInKg(item.orderSize):1);
@@ -265,7 +357,7 @@ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entr
 const detailModal=document.createElement('div');detailModal.className='product-modal';detailModal.innerHTML='<div class="modal-backdrop"></div><article class="modal-card"><button class="modal-close" aria-label="Close product details">×</button><img class="modal-image" alt=""><p class="modal-category"></p><h2></h2><b class="modal-price"></b><p class="modal-description"></p><label class="size-label" for="productSize">Required order quantity</label><select class="product-size" id="productSize"><option value="1 kg">1 kg</option><option value="2 kg">2 kg</option><option value="3 kg">3 kg</option><option value="4 kg">4 kg</option><option value="Custom quantity">Custom quantity</option></select><input class="custom-size-input" type="number" min="0.1" step="0.1" placeholder="Enter custom quantity in kg" hidden><p class="modal-order-note">Self-pickup only — Trichy, Tamil Nadu.</p><button class="modal-add">Add to cart +</button></article>';document.body.append(detailModal);
 const descriptionFor=(name,category)=>{if(category==='healthy')return `${name} are made without maida or white sugar, for a wholesome, delicious treat.`;if(category==='cookies')return `${name} are freshly baked to order with premium ingredients and a crisp, satisfying texture.`;if(category==='cakes')return `${name} is a celebration cake made to order. Egg or eggless options can be requested.`;if(category==='brownies')return `${name} is a rich, indulgent bake made for chocolate lovers.`;return `${name} is part of our customised bakery menu, prepared fresh to order with care.`};
 let selectedProduct;
-document.querySelectorAll('.product').forEach(card=>{card.addEventListener('click',event=>{if(event.target.closest('[data-product]'))return;const category=card.closest('.product-section').dataset.category,name=card.querySelector('h4').textContent,price=card.querySelector('b').textContent,image=card.querySelector('img'),size=defaultSize(name),isCookie=['cookies','millet-bakes','granola-muesli'].includes(category),isCake=['cakes','premium-cakes'].includes(category);selectedProduct={name,price,orderSize:size};detailModal.querySelector('.modal-image').src=image.src;detailModal.querySelector('.modal-image').alt=name;detailModal.querySelector('.modal-category').textContent=category==='cakes'?'Tier cake':category==='millet-bakes'?'Millet bakes':category==='brownie'?'Brownies & blondies':category==='cookies'?'Cookies':'Custom menu';detailModal.querySelector('h2').textContent=name;detailModal.querySelector('.modal-price').textContent=price;detailModal.querySelector('.modal-description').textContent=descriptionFor(name,category);const sizeSelect=detailModal.querySelector('.product-size');sizeSelect.innerHTML=isCookie?'<option value="250 g">250 g</option><option value="500 g">500 g</option><option value="1 kg" selected>1 kg</option><option value="2 kg">2 kg</option><option value="Custom quantity">Custom quantity (confirm on WhatsApp)</option>':isCake?'<option value="750 g">750 g</option><option value="1 kg" selected>1 kg</option><option value="1.5 kg">1.5 kg</option><option value="2 kg">2 kg</option><option value="2.5 kg">2.5 kg</option><option value="3 kg">3 kg</option><option value="4 kg">4 kg</option><option value="Custom quantity">Custom quantity (confirm on WhatsApp)</option>':size==='500 g'?'<option value="500 g">500 g</option><option value="1 kg">1 kg</option><option value="1.5 kg">1.5 kg</option><option value="2 kg">2 kg</option><option value="Custom quantity">Custom quantity (confirm on WhatsApp)</option>':'<option value="1 kg">1 kg</option><option value="2 kg">2 kg</option><option value="3 kg">3 kg</option><option value="4 kg">4 kg</option><option value="Custom quantity">Custom quantity (confirm on WhatsApp)</option>';detailModal.classList.add('show')})});
+document.querySelectorAll('.product').forEach(card=>{card.addEventListener('click',event=>{if(event.target.closest('[data-product]'))return;const category=card.closest('.product-section').dataset.category,name=card.querySelector('h4').textContent,price=card.querySelector('b').textContent,image=card.querySelector('img'),size=defaultSize(name),isCookie=['cookies-250g','cookies','millet-bakes','granola-muesli'].includes(category),isCake=['cakes','premium-cakes','layered-cakes','entremet','signature-cakes'].includes(category),isPack=isFixedWeight(name)||category==='cookies-250g';selectedProduct={name,price,orderSize:size};detailModal.querySelector('.modal-image').src=image.src;detailModal.querySelector('.modal-image').alt=name;detailModal.querySelector('.modal-category').textContent=category==='cakes'?'Cakes':category==='premium-cakes'?'Premium cakes':category==='layered-cakes'?'Layered cakes':category==='entremet'?'Entremets':category==='signature-cakes'?'Signature cakes':category==='cupcakes'?'Cupcakes':category==='muffins'?'Muffins':category==='dry-cakes'?'Dry cakes':category==='cookies-250g'?'Cookies (250g)':'Custom menu';detailModal.querySelector('h2').textContent=name;detailModal.querySelector('.modal-price').textContent=price;detailModal.querySelector('.modal-description').textContent=descriptionFor(name,category);const sizeSelect=detailModal.querySelector('.product-size');sizeSelect.innerHTML=isPack?`<option value="${defaultSize(name)}">${defaultSize(name)}</option>`:isCookie?'<option value="250 g">250 g</option><option value="500 g">500 g</option><option value="1 kg" selected>1 kg</option><option value="2 kg">2 kg</option><option value="Custom quantity">Custom quantity (confirm on WhatsApp)</option>':isCake?'<option value="750 g">750 g</option><option value="1 kg" selected>1 kg</option><option value="1.5 kg">1.5 kg</option><option value="2 kg">2 kg</option><option value="2.5 kg">2.5 kg</option><option value="3 kg">3 kg</option><option value="4 kg">4 kg</option><option value="Custom quantity">Custom quantity (confirm on WhatsApp)</option>':size==='500 g'?'<option value="500 g">500 g</option><option value="1 kg">1 kg</option><option value="1.5 kg">1.5 kg</option><option value="2 kg">2 kg</option><option value="Custom quantity">Custom quantity (confirm on WhatsApp)</option>':'<option value="1 kg">1 kg</option><option value="2 kg">2 kg</option><option value="3 kg">3 kg</option><option value="4 kg">4 kg</option><option value="Custom quantity">Custom quantity (confirm on WhatsApp)</option>';detailModal.classList.add('show')})});
 detailModal.querySelector('.product-size').onchange=event=>{detailModal.querySelector('.custom-size-input').hidden=event.target.value!=='Custom quantity'};detailModal.querySelector('.modal-close').onclick=()=>detailModal.classList.remove('show');detailModal.querySelector('.modal-backdrop').onclick=()=>detailModal.classList.remove('show');detailModal.querySelector('.modal-add').onclick=()=>{let orderSize=detailModal.querySelector('.product-size').value;const customInput=detailModal.querySelector('.custom-size-input');if(orderSize==='Custom quantity'){if(!Number(customInput.value)||Number(customInput.value)<=0){customInput.focus();return}orderSize=`${customInput.value} kg`}const found=cart.find(item=>item.name===selectedProduct.name&&item.orderSize===orderSize);found?found.quantity++:cart.push({...selectedProduct,orderSize,perKg:selectedProduct.price.includes('/kg'),quantity:1});renderCart();detailModal.classList.remove('show');setCart(true)};
 document.querySelectorAll('.product').forEach(card=>card.addEventListener('click',()=>{const customInput=detailModal.querySelector('.custom-size-input');customInput.hidden=true;customInput.value=''}));
 const totalStyle=document.createElement('style');totalStyle.textContent=`.cart-item em{display:block;font:700 12px Manrope,Arial,sans-serif;color:#201713;margin-top:7px}.cart-total{border-top:2px solid #201713;margin-top:14px;padding:15px 0 3px;display:grid;grid-template-columns:1fr auto;gap:5px;font:700 12px Manrope,Arial,sans-serif}.cart-total b{font-size:17px;color:#af5145}.cart-total small{grid-column:1/-1;color:#806e64;font:400 10px Manrope,Arial,sans-serif}.custom-size-input{width:100%;padding:12px;margin-top:8px;border:1px solid #d8c7b7;background:#fff;font:12px Manrope,Arial,sans-serif}`;document.head.append(totalStyle);
