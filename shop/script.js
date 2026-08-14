@@ -40,7 +40,7 @@ const productImageByName = {
   'White Forest': '../gallery/Cakes/white forest3.jpeg',
   'German Forest': '../gallery/extras/german forest cake.jpg',
   'Butterscotch Cake': '../gallery/extras/butterscotch cake.JPG',
-  'Rasmalai Cake': '../gallery/Cakes/gulab juman cheesecake.jpg',
+  'Rasmalai Cake': '../gallery/Cakes/rasamalai cake.png',
   'Rosemilk Cake': '../gallery/extras/rose milk cake.jpg',
   'Pig Pickin (Pineapple & Orange)': '../gallery/Cakes/berry overload cake.jpg',
   'Pina Colada (Pineapple & Coconut)': '../gallery/Cakes/tender coconut tres leches cake.jpg',
@@ -86,7 +86,7 @@ const productImageByName = {
   'Belgian Milk Chocolate Strawberry Cake': '../gallery/Cakes/raspberry:strawberry cheese chocolate layered cake.jpg',
   'Belgian Milk Chocolate Orange Cake': '../gallery/Cakes/berry overload cake.jpg',
   'Dark Chocolate Belgium Cheesecake Butter Icing': '../gallery/Cakes/buttercreamcake.jpeg',
-  'Mango Coconut Cake': '../gallery/extras/tender coconut tres leches cake.jpg',
+  'Mango Coconut Cake': '../gallery/Cakes/mango coconut layered cake.png',
   'Chocolate Cheese Layered Cake': '../gallery/extras/chocolate_cheese_layeredcake.jpg',
   'Chocolate Berry Cheese Layered Cake': '../gallery/Cakes/raspberry:strawberry cheese chocolate layered cake.jpg',
   'Blueberry Lemon Cake': '../gallery/Cakes/lemon blueberry layeredcake.jpg',
@@ -139,7 +139,7 @@ const productImageByName = {
   'Butterscotch Fresh Cream': '../gallery/extras/butterscotch cake.JPG',
   'German Forest': '../gallery/extras/german forest cake.jpg',
   'Seasonal Fresh Fruit Cake': '../gallery/Cakes/berry overload cake.jpg',
-  'Rasmalai Cake': '../gallery/Cakes/gulab juman cheesecake.jpg',
+  'Rasmalai Cake': '../gallery/Cakes/rasamalai cake.png',
   'Rosemilk Cake': '../gallery/extras/rose milk cake.jpg',
   'Pig Pickin Cake (Pineapple & Orange Compote)': '../gallery/Cakes/berry overload cake.jpg',
   'Pina Colada Cake (Pineapple & Coconut)': '../gallery/Cakes/tender coconut tres leches cake.jpg',
@@ -183,7 +183,7 @@ const productImageByName = {
   'Butterscotch Fresh Cream Cake': '../gallery/extras/butterscotch cake.JPG',
   'Butterscotch Cake with Italian Meringue Butter Cream': '../gallery/extras/butter scotch cake 2.jpg',
   'Blueberry / Strawberry / Mango / Black Currant / Kiwi Fresh Cream Cake': '../gallery/Cakes/blueberry cake.jpg',
-  'Rasmalai Fresh Cream Cake Tier': '../gallery/Cakes/gulab jamun cheesecake.jpg',
+  'Rasmalai Fresh Cream Cake Tier': '../gallery/Cakes/rasamalai cake.png',
   'Rosemilk Cake': '../gallery/extras/rose milk cake.jpg',
   'Dark Chocolate Truffle Cake': '../gallery/extras/dark_chocolate truffle cake.jpg',
   'German Forest': '../gallery/extras/german forest cake.jpg',
@@ -302,7 +302,7 @@ const productImageByName = {
   'Chocolate Fresh Cream Cake with Coconut Cream Filling': '../gallery/Cakes/chocolate cake.jpg',
   'Milk Chocolate Bounty Cake': '../gallery/Cakes/chocolate cake.jpg',
   'Rasmalai Fresh Cream Cake': '../gallery/Cakes/gulab jamun cheesecake.jpg',
-  'Rasmalai Cake': '../gallery/Cakes/gulab juman cheesecake.jpg',
+  'Rasmalai Cake': '../gallery/Cakes/rasamalai cake.png',
   'Seasonal Fresh Fruit Cake with Fruit Compote': '../gallery/Cakes/berry overload cake.jpg',
   'Korean Cream Cheese Bun': '../gallery/Breads/custard.jpeg',
   'Berliner / Bomboloni / Doughnut with Diplomat Cream': '../gallery/Desserts/donut.jpeg',
@@ -336,6 +336,7 @@ const shopLayout=document.createElement('div');shopLayout.className='shop-layout
 document.querySelectorAll('.shop-filter').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.shop-filter').forEach(item=>item.classList.remove('active'));button.classList.add('active');const selected=button.dataset.category;sections.forEach(section=>section.hidden=selected!=='all'&&section.dataset.category!==selected);window.scrollTo({top:shopLayout.offsetTop-105,behavior:'smooth'})}));
 const cartPanel=document.getElementById('cart'),overlay=document.getElementById('cartOverlay'),cartItems=document.getElementById('cartItems'),cartCount=document.getElementById('cartCount'),sendOrder=document.getElementById('sendOrder');
 function setCart(open){cartPanel.classList.toggle('open',open);overlay.classList.toggle('show',open);cartPanel.setAttribute('aria-hidden',String(!open))}
+const isFixedWeight=name=>/\(\d+\s*g\)/i.test(name);
 const defaultSize=name=>{const match=name.match(/\((\d+)\s*g\)/i);return match?`${match[1]} g`:'1 kg';};
 const weightInKg=size=>{const match=size.match(/([\d.]+)\s*(kg|g)/i);return match?(match[2].toLowerCase()==='g'?Number(match[1])/1000:Number(match[1])):1};
 const money=value=>`₹${Math.round(value).toLocaleString('en-IN')}`;
