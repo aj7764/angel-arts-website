@@ -1,5 +1,5 @@
 window.ANGEL_ARTS_CONFIG = {
-    contactEmail: 'angelartsandculinaryacademy@gmail.com',
+    contactEmail: 'info@angelartsandculinaryacademy.com',
     whatsappNumber: '917871370663',
-    web3formsAccessKey: '7c6e5b66-6ef9-4a53-9d4e-2c91ae25d6ec'
+    web3formsAccessKey: '5d169a23-964c-4fe2-b497-fb1af34be0a0'
 };

@@ -3,9 +3,9 @@
 // ============================================
 
 const siteConfig = window.ANGEL_ARTS_CONFIG || {};
-const CONTACT_EMAIL = siteConfig.contactEmail || 'angelartsandculinaryacademy@gmail.com';
+const CONTACT_EMAIL = siteConfig.contactEmail || 'info@angelartsandculinaryacademy.com';
 const WHATSAPP_NUMBER = siteConfig.whatsappNumber || '917871370663';
-const WEB3FORMS_ACCESS_KEY = siteConfig.web3formsAccessKey || '7c6e5b66-6ef9-4a53-9d4e-2c91ae25d6ec';
+const WEB3FORMS_ACCESS_KEY = siteConfig.web3formsAccessKey || 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
 
 // Mobile Menu Toggle
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');

@@ -638,6 +638,12 @@ section {
     background: #fff;
 }
 
+.section-action-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+}
+
 
 .courses-grid {
     display: grid;
